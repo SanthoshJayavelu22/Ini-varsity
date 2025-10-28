@@ -19,7 +19,7 @@ const EducationCTASection = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight mb-8"
+          className="text-3xl sm:text-5xl md:text-6xl font-medium leading-tight mb-8"
         >
           <span className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">
             “Let&apos;s connect the dots, <br /> through{" "}
