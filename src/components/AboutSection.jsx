@@ -25,7 +25,7 @@ const AboutSection = () => {
         {floatingDots.map((dot) => (
           <motion.div
             key={dot.id}
-            className="absolute w-2 h-2 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-full opacity-20"
+            className="absolute w-2 h-2 bg-linear-to-r from-[#8C52FF] to-[#FF5757] rounded-full opacity-20"
             style={{
               left: `${dot.x}%`,
               top: `${dot.y}%`,
@@ -67,7 +67,7 @@ const AboutSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isTextInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-5xl font-semibold bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6"
+            className="text-4xl md:text-5xl font-semibold bg-linear-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6"
           >
             Connecting dots, <br /> through education
           </motion.h2>
@@ -88,7 +88,7 @@ const AboutSection = () => {
               }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all"
+              className="bg-linear-to-r from-[#8C52FF] to-[#FF5757] text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all"
             >
               <motion.span
                 animate={{ x: [0, 5, 0] }}
@@ -145,7 +145,7 @@ const AboutSection = () => {
             
             {/* Subtle glow effect */}
             <motion.div
-              className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#8C52FF] to-[#FF5757] opacity-0 mix-blend-overlay"
+              className="absolute inset-0 rounded-2xl bg-linear-to-r from-[#8C52FF] to-[#FF5757] opacity-0 mix-blend-overlay"
               whileInView={{ opacity: 0.1 }}
               transition={{ duration: 2, delay: 1 }}
             />
@@ -161,7 +161,7 @@ const AboutSection = () => {
         transition={{ duration: 1, delay: 1.5 }}
       >
         <motion.div
-          className="w-6 h-1 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-full"
+          className="w-6 h-1 bg-linear-to-r from-[#8C52FF] to-[#FF5757] rounded-full"
           animate={{ 
             width: ["24px", "100px", "24px"],
             opacity: [0.5, 1, 0.5]

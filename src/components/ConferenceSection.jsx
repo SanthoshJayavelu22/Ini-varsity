@@ -36,7 +36,7 @@ const ConferenceSection = () => {
         {Array.from({ length: 12 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-full opacity-20"
+            className="absolute w-1 h-1 bg-linear-to-r from-[#8C52FF] to-[#FF5757] rounded-full opacity-20"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -79,7 +79,7 @@ const ConferenceSection = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold bg-linear-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight"
           >
             Annual Education Conference 2025
           </motion.h2>
@@ -117,7 +117,7 @@ const ConferenceSection = () => {
                 y: -10,
                 transition: { duration: 0.3 }
               }}
-              className="shrink-0 w-[160px] sm:w-[200px] md:w-[250px] snap-center"
+              className="shrink-0 w-40 sm:w-[200px] md:w-[250px] snap-center"
             >
               <motion.div
                 className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 relative group"
@@ -199,7 +199,7 @@ const ConferenceSection = () => {
             
             {/* Animated gradient overlay */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0"
+              className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0"
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
             />
