@@ -8,14 +8,14 @@ import TestimonialsFAQ from '../components/explore/TestimonialsFAQ'
 
 const Explore = () => {
   return (
-    <div>
+    <main>
       <Hero/>
       <TeachWithUs/>
       <Curriculum/>
       <CampusToClient/>
       <CertificationSection/>
       <TestimonialsFAQ/>
-    </div>
+    </main>
   )
 }
 

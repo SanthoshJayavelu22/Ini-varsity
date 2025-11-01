@@ -51,7 +51,7 @@ const GlobalPresence = () => {
   ];
 
   return (
-    <section className="w-full bg-white py-8">
+    <section className="w-full bg-white py-8 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Title Section */}
         <motion.div
@@ -66,7 +66,7 @@ const GlobalPresence = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-[#8C52FF] to-[#FF5757]"
+            className="text-3xl md:text-4xl font-bold leading-normal text-transparent bg-clip-text bg-linear-to-r from-[#8C52FF] to-[#FF5757]"
           >
             Our global presence
           </motion.h2>
@@ -134,13 +134,7 @@ const GlobalPresence = () => {
               src={map}
               alt="World map"
               className="w-full max-w-[600px] rounded-md opacity-95"
-              whileInView={{
-                boxShadow: [
-                  "0 10px 30px rgba(0,0,0,0.1)",
-                  "0 20px 50px rgba(140, 82, 255, 0.2)",
-                  "0 10px 30px rgba(0,0,0,0.1)",
-                ],
-              }}
+             
               transition={{
                 duration: 4,
                 repeat: Infinity,

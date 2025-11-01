@@ -40,28 +40,39 @@ const staggerContainer = {
 
 const Hero = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-white pt-32 pb-24">
-      <motion.div 
+    <section className="relative w-full overflow-hidden bg-white pt-32 pb-24 ">
+      <motion.div
         className="max-w-4xl mx-auto text-center px-6"
         variants={staggerContainer}
         initial="initial"
         animate="animate"
       >
-        <motion.h1 
-          className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight"
+        {/* Gradient Heading */}
+        <motion.h1
+          className="text-4xl md:text-7xl font-light leading-tight"
           variants={fadeInUp}
         >
-          Empower through <br /> Education & Community
+          <span className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">
+            Empower through
+          </span>
+          <br />
+          <span className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">
+            Education & Community
+          </span>
         </motion.h1>
-        <motion.p 
-          className="mt-5 text-gray-600 text-lg"
+
+        {/* Gradient Paragraph */}
+        <motion.p
+          className="mt-5 text-lg  bg-clip-text"
           variants={fadeInUp}
         >
-          Ini versity - We inspire students, empower faculty, and support
-          institutions through programs that teach tomorrow's digital skills.
+        Our study programs are ingeniously designed to dissolve the boundaries between academic concepts and practical implementation. We firmly believe in an education that is both actionable and deeply pertinent.
+
         </motion.p>
-        <motion.button 
-          className="mt-8 bg-black text-white font-medium px-8 py-3 rounded-full hover:bg-gray-800 transition"
+
+        {/* Gradient Button */}
+        <motion.button
+          className="mt-8 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white font-medium px-8 py-3 rounded-full hover:opacity-90 transition"
           variants={fadeInUp}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -81,18 +92,20 @@ const Hero = () => {
             ease: "linear",
           }}
         >
-          {[...localImages.slice(0, 4), ...localImages.slice(0, 4)].map((src, i) => (
-            <div
-              key={i}
-              className="flex-shrink-0 rounded-2xl overflow-hidden w-64 h-40"
-            >
-              <img
-                src={src}
-                alt={`${topics[i % topics.length]} image`}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+          {[...localImages.slice(0, 4), ...localImages.slice(0, 4)].map(
+            (src, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 rounded-2xl overflow-hidden w-80 h-54"
+              >
+                <img
+                  src={src}
+                  alt={`${topics[i % topics.length]} image`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )
+          )}
         </motion.div>
       </div>
 
@@ -107,18 +120,20 @@ const Hero = () => {
             ease: "linear",
           }}
         >
-          {[...localImages.slice(4, 8), ...localImages.slice(4, 8)].map((src, i) => (
-            <div
-              key={i}
-              className="flex-shrink-0 rounded-2xl overflow-hidden w-64 h-40"
-            >
-              <img
-                src={src}
-                alt={`${topics[i % topics.length]} image`}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+          {[...localImages.slice(4, 8), ...localImages.slice(4, 8)].map(
+            (src, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 rounded-2xl overflow-hidden w-80 h-54"
+              >
+                <img
+                  src={src}
+                  alt={`${topics[i % topics.length]} image`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )
+          )}
         </motion.div>
       </div>
     </section>

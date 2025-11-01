@@ -30,7 +30,7 @@ const ConferenceSection = () => {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section ref={containerRef} className="relative z-10 bg-white -mt-20 overflow-hidden">
+    <section ref={containerRef} className="relative z-10 bg-white -mt-20 overflow-hidden ">
       {/* Animated Background Particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {Array.from({ length: 12 }).map((_, i) => (

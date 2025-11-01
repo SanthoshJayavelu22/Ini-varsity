@@ -42,7 +42,7 @@ const Hero = () => {
   return (
     <section
       ref={sectionRef}
-      className="mt-28 md:mt-50 text-center px-6 md:px-12 max-w-6xl mx-auto relative overflow-hidden"
+      className="mt-28 md:mt-45 text-center px-6 md:px-12 max-w-6xl mx-auto relative overflow-hidden"
     >
       {/* Floating Dots Background */}
       <div className="absolute inset-0 pointer-events-none">
@@ -52,12 +52,12 @@ const Hero = () => {
       </div>
 
       {/* Foreground Content */}
-      <div className="relative z-10 max-w-3xl mx-auto">
+      <div className="relative z-10 max-w-5xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl md:text-6xl font-semibold leading-tight"
+          className="text-4xl md:text-[90px] font-light leading-tight"
         >
           <motion.span
             initial={{ opacity: 0, x: -30 }}

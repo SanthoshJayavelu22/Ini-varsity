@@ -13,7 +13,7 @@ const EducationCTASection = () => {
   }, [words.length]);
 
   return (
-    <section className="bg-white text-gray-900 pt-24 pb-20 px-4 sm:px-6 md:px-12">
+    <section className="bg-white text-gray-900 pt-24 pb-20 px-4 sm:px-6 md:px-12 relative">
       <div className="max-w-4xl mx-auto text-center">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}

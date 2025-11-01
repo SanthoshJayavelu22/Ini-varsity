@@ -15,7 +15,7 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full fixed top-0 left-0 bg-white z-50 shadow-sm">
+    <header className="w-full fixed top-0 left-0 bg-white z-50 shadow-sm ">
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20">
         {/* Logo */}
         <div className="flex items-center gap-2">
@@ -51,16 +51,16 @@ const Header = () => {
             Blogs
           </Link>
           <Link 
-            to="/connect" 
-            className={`hover:text-black ${isActive("/connect") ? "text-black font-bold" : ""}`}
+            to="/contact" 
+            className={`hover:text-black ${isActive("/contact") ? "text-black font-bold" : ""}`}
           >
-            Connect
+         Contact Us
           </Link>
         </nav>
 
         {/* Right Side */}
         <div className="hidden md:flex items-center gap-6">
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-medium px-5 py-2 rounded-full transition">
+          <button className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white font-medium px-5 py-2 rounded-full hover:opacity-90 transition ">
             Get Started
           </button>
         </div>
@@ -103,11 +103,11 @@ const Header = () => {
             Blogs
           </Link>
           <Link 
-            to="/connect" 
+            to="/contact" 
             onClick={handleLinkClick} 
-            className={`block ${isActive("/connect") ? "text-black font-bold" : "text-gray-600"}`}
+            className={`block ${isActive("/contact") ? "text-black font-bold" : "text-gray-600"}`}
           >
-            Connect
+            Contact Us
           </Link>
 
           <button className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-full">

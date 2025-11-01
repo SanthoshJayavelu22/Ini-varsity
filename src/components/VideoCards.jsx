@@ -12,15 +12,14 @@ const VideoCards = () => {
     offset: ["start start", "end start"],
   });
 
-  // Cards move horizontally as user scrolls
-  const x = useTransform(scrollYProgress, [0, 1], ["40%", "-75%"]);
+  // 👉 Move left ➜ right when user scrolls down
+  const x = useTransform(scrollYProgress, [0, 1], ["-75%", "40%"]);
 
-  // Local images
   const images = [img1, img2, img3, img4];
 
   return (
     <section ref={ref} className="relative h-[200vh] bg-transparent z-0 mt-36">
-      {/* Fixed container */}
+      {/* Sticky container stays in viewport while scroll animates */}
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-[#ededed]">
         <motion.div style={{ x }} className="flex gap-8 px-10">
           {images.map((src, i) => (

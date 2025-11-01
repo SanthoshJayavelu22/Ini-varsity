@@ -103,7 +103,7 @@ export default function CertificationSection() {
   };
 
   return (
-    <section className="bg-[#E8F0FB] py-20">
+    <section className="bg-[#E8F0FB] py-20 relative">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <motion.div 
@@ -114,7 +114,7 @@ export default function CertificationSection() {
           variants={containerVariants}
         >
           <motion.h2 
-            className="text-3xl md:text-4xl font-semibold text-gray-900 max-w-xl"
+            className="text-3xl md:text-4xl font-semibold bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent max-w-xl"
             variants={itemVariants}
           >
             Certify your students for success

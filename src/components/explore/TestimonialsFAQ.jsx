@@ -115,7 +115,7 @@ export default function TestimonialsFAQ() {
   };
 
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-20 relative">
       <div className="max-w-6xl mx-auto px-6">
         {/* Testimonials */}
         <motion.div 
@@ -132,10 +132,10 @@ export default function TestimonialsFAQ() {
             TESTIMONIALS
           </motion.p>
           <motion.h2 
-            className="text-4xl font-semibold mb-10"
+            className="text-4xl font-semibold mb-10 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent"
             variants={itemVariants}
           >
-            Attendee <span className="text-pink-500">reviews</span>
+            Attendee reviews
           </motion.h2>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -149,8 +149,8 @@ export default function TestimonialsFAQ() {
                 to showcase my creativity and expertise.”
               </p>
               <div>
-                <p className="font-semibold text-black">Jessica Hiney</p>
-                <p className="text-sm text-black/80">
+                <p className="font-semibold text-whitek">Jessica Hiney</p>
+                <p className="text-sm text-white/80">
                   MFA Media Design Full Sail University
                 </p>
               </div>
@@ -183,7 +183,7 @@ export default function TestimonialsFAQ() {
           variants={containerVariants}
         >
           <motion.h2 
-            className="text-3xl font-semibold mb-8"
+            className="text-3xl font-semibold mb-8 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent"
             variants={itemVariants}
           >
             FAQ

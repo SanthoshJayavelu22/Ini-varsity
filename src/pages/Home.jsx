@@ -6,7 +6,7 @@ import EducationSection from '../components/EducationSection';
 import EducationCTASection from '../components/EducationCTASection';
 const Home = () => {
   return (
-    <div>
+    <main>
         <Hero />
         <VideoCards />
         <AboutSection />
@@ -14,7 +14,7 @@ const Home = () => {
          <EducationSection/>
          <EducationCTASection/>
        
-    </div>
+    </main>
   )
 }
 

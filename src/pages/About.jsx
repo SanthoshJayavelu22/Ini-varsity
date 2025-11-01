@@ -5,11 +5,11 @@ import GlobalPresence from '../components/about/GlobalPresence'
 
 const About = () => {
   return (
-    <div>
+    <main>
       <AboutMission/>
       <WhatWeDo/>
       <GlobalPresence/>
-    </div>
+    </main>
   )
 }
 

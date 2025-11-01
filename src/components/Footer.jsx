@@ -1,8 +1,31 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronUp } from "lucide-react";
 import logo from "../assets/images/ini varsity logo.png";
 
 const Footer = () => {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  // Show scroll-to-top button when user scrolls down
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
-    <footer className="bg-gray-50 mt-24 border-t border-gray-200">
+    <footer className="bg-gray-50 mt-24 border-t border-gray-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-12">
         {/* Top Section - 3 Column Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-12">
@@ -126,6 +149,27 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Scroll to Top Button */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            onClick={scrollToTop}
+            className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white rounded-full shadow-lg flex items-center justify-center hover:shadow-xl transition-all duration-300"
+            initial={{ opacity: 0, scale: 0, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0, y: 20 }}
+            whileHover={{ 
+              scale: 1.1,
+              y: -2
+            }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          >
+            <ChevronUp className="w-6 h-6" />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </footer>
   );
 };

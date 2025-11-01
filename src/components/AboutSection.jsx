@@ -19,7 +19,7 @@ const AboutSection = () => {
   }));
 
   return (
-    <section className="-mt-[30vh] relative z-10 bg-white py-28 md:py-36 rounded-t-[100px] overflow-hidden">
+    <section className="-mt-[30vh] relative z-10 bg-white py-28 md:py-36 rounded-t-[100px] overflow-hidden relative">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         {floatingDots.map((dot) => (
@@ -67,7 +67,7 @@ const AboutSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={isTextInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-5xl font-semibold bg-linear-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6"
+            className="text-4xl md:text-5xl font-semibold leading-normal bg-linear-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6"
           >
             Connecting dots, <br /> through education
           </motion.h2>
@@ -77,7 +77,7 @@ const AboutSection = () => {
             animate={isTextInView ? { opacity: 1 } : {}}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            <p className="text-gray-600 leading-relaxed mb-8">
+            <p className="text-gray-600 leading-relaxed mb-8 text-justify">
               We are a research-driven educational Organization committed to nurturing the next generation of STEAM trailblazers. Our groundbreaking learning model doesn't just teach; it transforms, fostering acute critical thinking, inventive creativity, and authentic problem-solving abilities. We bring learning to life through immersive hands-on experiences from vibrant forums and insightful webinars to enriching, expert-led workshops all designed to ignite profound curiosity and empower students to become influential leaders in a perpetually evolving world.
             </p>
 
@@ -117,14 +117,8 @@ const AboutSection = () => {
           }}
           className="md:w-1/2"
         >
-          <motion.div
-            whileHover={{ 
-              scale: 1.02,
-              rotateZ: -1,
-              transition: { duration: 0.3 }
-            }}
-            className="relative"
-          >
+      <motion.div className="relative">
+
             <motion.img
               src={aboutimg}
               alt="Kids in science lab"
