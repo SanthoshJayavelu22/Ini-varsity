@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Explore from "./pages/Explore";
 import Blogs from "./pages/Blogs";
 import ContactUs from "./pages/ContactUs";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
    
       <div className="min-h-screen bg-transparent flex flex-col">
         <Header />
-
+<ScrollToTop/>
         <main className="grow">
           <Routes>
             <Route path="/" element={<Home />} />
