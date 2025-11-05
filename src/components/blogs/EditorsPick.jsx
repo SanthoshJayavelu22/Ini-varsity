@@ -56,14 +56,14 @@ const EditorsPick = () => {
   return (
     <section className="px-6 md:px-16 py-12 bg-white relative">
       <motion.div 
-        className="max-w-7xl m-auto px-6 md:px-16 py-12"
+        className="max-w-7xl m-auto px-6 md:px-12 py-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
         variants={containerVariants}
       >
         <motion.h2 
-          className="text-2xl font-semibold mb-6"
+          className="text-4xl md:text-5xl font-light bg-linear-to-t from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight"
           variants={itemVariants}
         >
           Editor's Pick

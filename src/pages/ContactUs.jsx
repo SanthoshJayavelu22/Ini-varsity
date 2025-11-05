@@ -81,7 +81,7 @@ const ContactUs = () => {
   };
 
   return (
-<section className="w-full bg-white pt-30 px-6 md:px-20 ">
+<section className="w-full bg-white pt-30 px-6 md:px-20 pb-20">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -248,7 +248,7 @@ const ContactUs = () => {
                 </div>
                 <div className="text-left">
                   <h3 className="font-bold text-gray-900 text-lg">Email</h3>
-                  <p className="text-gray-600 mt-1">support@iniversity.com</p>
+                  <p className="text-gray-600 mt-1">support@inivarsity.com</p>
                   <p className="text-sm text-gray-500 mt-2">We'll reply within 24 hours</p>
                 </div>
               </motion.div>

@@ -30,7 +30,7 @@ const ConferenceSection = () => {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section ref={containerRef} className="relative z-10 bg-white -mt-20 overflow-hidden ">
+    <section ref={containerRef} className="relative z-10 bg-white -mt-20 overflow-hidden mb-58">
       {/* Animated Background Particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {Array.from({ length: 12 }).map((_, i) => (
@@ -57,7 +57,7 @@ const ConferenceSection = () => {
       </div>
 
       {/* Text & Event Cards */}
-      <div className="max-w-6xl mx-auto flex flex-col gap-16 px-4 sm:px-6 md:px-12 py-16 md:py-24 relative z-10">
+      <div className="max-w-7xl mx-auto flex flex-col gap-16 px-4 sm:px-6 md:px-12 py-16 md:py-24 relative z-10">
         {/* Top text */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
@@ -79,7 +79,7 @@ const ConferenceSection = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold bg-linear-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight"
+            className="text-4xl md:text-5xl font-light bg-linear-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight"
           >
             Annual Education Conference 2025
           </motion.h2>
@@ -88,7 +88,7 @@ const ConferenceSection = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-7xl mx-auto md:mx-0"
+            className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-7xl mx-auto md:mx-0 text-justify"
           >
             Imagine a vibrant hub where passionate educators, curious students, insightful researchers, and visionary innovators converge all united by a shared commitment to reimagining the future of learning. This isn't just an event; it's a dynamic crucible for connection and innovation, offering an unparalleled platform for collaborative knowledge-sharing, genuine networking, and the exciting showcase of groundbreaking educational tools and ideas. From captivating keynote addresses to inspiring student-led showcases, you'll delve into inclusive, high-impact, and cutting-edge tech-forward strategies that are truly transforming education. Join us, and become part of a powerful movement that amplifies diverse voices, ignites meaningful change, and fortifies our educational communities for generations to come.
           </motion.p>
@@ -117,7 +117,7 @@ const ConferenceSection = () => {
                 y: -10,
                 transition: { duration: 0.3 }
               }}
-              className="shrink-0 w-40 sm:w-[200px] md:w-[250px] snap-center"
+              className="shrink-0 w-40 sm:w-[200px] md:w-[280px] snap-center"
             >
               <motion.div
                 className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 relative group"

@@ -103,8 +103,8 @@ const Curriculum = () => {
           variants={containerVariants}
         >
           <motion.div variants={itemVariants}>
-            <h2 className="text-3xl md:text-4xl font-semibold bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent mb-2">
-              Ini Versity curriculum
+            <h2 className="text-4xl md:text-5xl font-light bg-linear-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight">
+              Ini Varsity curriculum
             </h2>
           </motion.div>
           <motion.div 
@@ -138,18 +138,18 @@ const Curriculum = () => {
           {courses.map((course, index) => (
             <motion.div
               key={index}
-              className="rounded-2xl p-0 flex flex-col md:flex-row md:items-center md:justify-between hover:shadow-sm transition-shadow duration-300 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] p-0.5"
+              className="rounded-2xl p-[3px] flex flex-col md:flex-row md:items-center md:justify-between hover:shadow-sm transition-shadow duration-300 bg-gradient-to-r from-[#8C52FF] to-[#FF5757]"
               variants={courseCardVariants}
               whileHover="hover"
             >
               {/* Content with white background */}
-              <div className="bg-white rounded-2xl p-6 flex flex-col md:flex-row md:items-center md:justify-between w-full">
+              <div className="bg-white rounded-2xl p-10 h-70 md:h-50 flex flex-col md:flex-row md:items-center md:justify-between w-full">
                 {/* Left Text */}
                 <div className="mb-4 md:mb-0">
-                  <h3 className="text-lg font-medium text-gray-900">
+                  <h3 className="text-2xl font-sm md:font-medium text-gray-900">
                     {course.title}
                   </h3>
-                  <p className="text-gray-700 text-[15px] mt-1">
+                  <p className="text-gray-700 text-[12px] md:text-[18px] mt-1">
                     {course.description}
                   </p>
                 </div>
@@ -157,7 +157,7 @@ const Curriculum = () => {
                 {/* Right Buttons - unchanged */}
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
                   <motion.button 
-                    className="border border-gray-300 text-sm font-medium px-4 py-2 rounded-full hover:bg-gray-100 transition-colors duration-200"
+                    className="border border-gray-300 text-md font-sm md:font-medium px-6 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200"
                     variants={buttonVariants}
                     whileHover="hover"
                     whileTap="tap"
@@ -165,12 +165,12 @@ const Curriculum = () => {
                     Download Preview
                   </motion.button>
                   <motion.button 
-                    className="text-sm font-medium underline text-gray-900 hover:text-gray-700 flex items-center gap-1"
+                    className="text-md font-sm md:font-medium underline text-gray-900 hover:text-gray-700 flex items-center gap-1"
                     variants={buttonVariants}
                     whileHover="hover"
                     whileTap="tap"
                   >
-                    Request full curriculum
+                    Enquiry
                     <motion.span
                       whileHover={{ x: 3 }}
                       transition={{ duration: 0.2 }}

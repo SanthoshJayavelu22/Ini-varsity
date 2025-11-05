@@ -6,7 +6,7 @@ import visionimg from "../../assets/images/vision.jpg";
 
 const AboutMission = () => {
   return (
-    <section className="w-full bg-white py-8 md:py-16 pt-30 md:pt-40 relative">
+    <section className="w-full bg-white py-8 md:py-16 pt-30 md:pt-40 relative overflow-hidden">
       {/* ABOUT US SECTION */}
       <div className="max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 items-stretch gap-12 mb-24">
         {/* Left Text */}
@@ -28,7 +28,7 @@ const AboutMission = () => {
           </motion.p>
 
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#8C52FF] to-[#FF5757] mb-6 leading-snug"
+            className="text-4xl md:text-5xl leading-normal font-light text-transparent bg-clip-text bg-gradient-to-r from-[#8C52FF] to-[#FF5757] mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -87,15 +87,18 @@ const AboutMission = () => {
 
         {/* MISSION & VISION SECTION */}
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-[#8C52FF] to-[#FF5757] mb-12"
-        >
-          Mission & Vision
-        </motion.h2>
+<motion.h2
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="text-4xl md:text-5xl leading-normal font-light text-transparent bg-clip-text bg-gradient-to-t from-[#8C52FF] to-[#FF5757] mb-6"
+>
+  Mission & Vision
+</motion.h2>
+
+
+        
 
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12 mb-16">
           {/* Mission Card */}
@@ -112,7 +115,7 @@ const AboutMission = () => {
               MISSION
             </div>
 
-            <p className="text-gray-700 leading-relaxed mt-6">
+            <p className="text-gray-700 leading-relaxed mt-6 text-justify">
               Our core mission is to ignite a lifelong passion for discovery in
               every student, cultivating powerful capabilities that go beyond
               textbooks. We’re dedicated to nurturing a skilled and responsible
@@ -181,7 +184,7 @@ const AboutMission = () => {
               VISION
             </div>
 
-            <p className="text-gray-700 leading-relaxed mt-6">
+            <p className="text-gray-700 leading-relaxed mt-6 text-justify">
               We envision becoming the foremost nexus where bright young minds,
               pioneering researchers, and dynamic startups converge. Our goal is
               to catalyze a thriving, research-driven ecosystem that relentlessly

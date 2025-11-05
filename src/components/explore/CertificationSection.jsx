@@ -104,7 +104,7 @@ export default function CertificationSection() {
 
   return (
     <section className="bg-[#E8F0FB] py-20 relative">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
         <motion.div 
           className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10"
@@ -114,7 +114,7 @@ export default function CertificationSection() {
           variants={containerVariants}
         >
           <motion.h2 
-            className="text-3xl md:text-4xl font-semibold bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent max-w-xl"
+            className="text-4xl md:text-5xl font-light bg-linear-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight"
             variants={itemVariants}
           >
             Certify your students for success

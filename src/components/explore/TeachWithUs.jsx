@@ -87,10 +87,10 @@ const TeachWithUs = () => {
       >
         {/* Header */}
         <motion.h2 
-          className="text-3xl md:text-4xl font-semibold mb-10 text-left bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-light bg-linear-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight md:w-xl"
           variants={itemVariants}
         >
-          Teach future-ready digital <br /> skills with Ini versity.
+          Teach future-ready digital skills with Ini Varsity.
         </motion.h2>
 
         {/* Top Section - No gap between boxes */}
@@ -168,7 +168,7 @@ const TeachWithUs = () => {
           variants={containerVariants}
         >
           <motion.div 
-            className="bg-transparent p-1 rounded-2xl border-1 border-transparent bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-origin-border"
+            className="bg-transparent p-[3px] rounded-2xl border-0 border-transparent bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-origin-border"
             variants={cardVariants}
             whileHover={{ 
               y: -5,
@@ -188,7 +188,7 @@ const TeachWithUs = () => {
           </motion.div>
           
           <motion.div 
-            className="bg-transparent p-1 rounded-2xl border-1 border-transparent bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-origin-border"
+            className="bg-transparent p-[3px] rounded-2xl border-0 border-transparent bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-origin-border"
             variants={cardVariants}
             whileHover={{ 
               y: -5,
@@ -208,7 +208,7 @@ const TeachWithUs = () => {
           </motion.div>
           
           <motion.div 
-            className="bg-transparent p-1 rounded-2xl border-1 border-transparent bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-origin-border"
+            className="bg-transparent p-[3px] rounded-2xl border-0 border-transparent bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-origin-border"
             variants={cardVariants}
             whileHover={{ 
               y: -5,

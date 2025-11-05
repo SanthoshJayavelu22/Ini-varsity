@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const EducationCTASection = () => {
-  const words = ["education", "innovation", "knowledge"];
+  const words = ["education", "innovation", "research"];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -13,13 +13,14 @@ const EducationCTASection = () => {
   }, [words.length]);
 
   return (
-    <section className="bg-white text-gray-900 pt-24 pb-20 px-4 sm:px-6 md:px-12 relative">
-      <div className="max-w-4xl mx-auto text-center">
+<section className="relative z-10 -mt-24 bg-gray-200 text-gray-900 pt-70 pb-40 px-4 sm:px-6 md:px-12">
+
+      <div className="max-w-7xl mx-auto text-center">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-5xl md:text-6xl font-medium leading-tight mb-8"
+          className="text-4xl md:text-[90px] font-light leading-tight mb-8"
         >
           <span className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">
             “Let&apos;s connect the dots, <br /> through{" "}

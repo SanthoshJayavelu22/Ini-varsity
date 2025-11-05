@@ -48,7 +48,7 @@ export default function HeroBlog() {
   return (
     <section className="bg-white pt-30 pb-20 relative">
       <motion.div 
-        className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-12"
+        className="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 items-center gap-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}

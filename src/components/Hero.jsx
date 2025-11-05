@@ -42,7 +42,7 @@ const Hero = () => {
   return (
     <section
       ref={sectionRef}
-      className="mt-28 md:mt-45 text-center px-6 md:px-12 max-w-6xl mx-auto relative overflow-hidden"
+      className="mt-28 md:mt-45 text-center px-6 md:px-12 max-w-7xl mx-auto relative overflow-hidden"
     >
       {/* Floating Dots Background */}
       <div className="absolute inset-0 pointer-events-none">
@@ -116,14 +116,7 @@ const Hero = () => {
               Get Started
             </motion.span>
           </motion.button>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-3 text-sm text-gray-500"
-          >
-            Start for free. No credit card required.
-          </motion.p>
+      
         </motion.div>
       </div>
     </section>

@@ -12,8 +12,8 @@ const VideoCards = () => {
     offset: ["start start", "end start"],
   });
 
-  // 👉 Move left ➜ right when user scrolls down
-  const x = useTransform(scrollYProgress, [0, 1], ["-75%", "40%"]);
+
+  const x = useTransform(scrollYProgress, [0, 1], ["-75%", "90%"]);
 
   const images = [img1, img2, img3, img4];
 

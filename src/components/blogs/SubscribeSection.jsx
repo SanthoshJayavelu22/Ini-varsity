@@ -51,7 +51,7 @@ const SubscribeSection = () => {
   return (
     <section className="bg-black text-white relative">
       <motion.div 
-        className="max-w-7xl mx-auto py-24 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12"
+        className="max-w-7xl mx-auto py-24 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}

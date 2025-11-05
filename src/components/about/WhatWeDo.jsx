@@ -74,7 +74,7 @@ const WhatWeDo = () => {
     <section className="w-full bg-white py-8 md:py-16 relative">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-12">
+        <div className="flex flex-col md:flex-row md:items-center justify-between ">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -84,14 +84,14 @@ const WhatWeDo = () => {
             <p className="text-sm font-semibold text-gray-500 mb-2">
               our services
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-[#8C52FF] to-[#FF5757]">
+            <h2 className="text-4xl md:text-5xl leading-normal font-light text-transparent bg-clip-text bg-gradient-to-r from-[#8C52FF] to-[#FF5757] mb-6">
               What we do
             </h2>
           </motion.div>
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-[30%_70%] gap-10 md:gap-16 items-start">
           {/* Left Accordion */}
           <div className="flex flex-col space-y-4">
             {faqs.map((faq, i) => (
@@ -144,7 +144,7 @@ const WhatWeDo = () => {
           </div>
 
           {/* Right Image (Dynamic) */}
-          <div className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-md">
+          <div className="relative w-full h-[400px] md:h-[520px] rounded-2xl overflow-hidden shadow-md">
             <AnimatePresence mode="wait">
               <motion.img
                 key={activeIndex ?? "default"}
@@ -181,7 +181,7 @@ const WhatWeDo = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-[#8C52FF] to-[#FF5757] mb-12"
+              className="text-4xl md:text-5xl leading-normal font-light text-transparent bg-clip-text bg-gradient-to-t from-[#8C52FF] to-[#FF5757] mb-6"
             >
               Brains behind the mission
             </motion.h3>

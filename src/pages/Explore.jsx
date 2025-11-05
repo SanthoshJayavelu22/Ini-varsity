@@ -5,6 +5,7 @@ import Curriculum from '../components/explore/Curriculum'
 import CampusToClient from '../components/explore/CampusToClient'
 import CertificationSection from '../components/explore/CertificationSection'
 import TestimonialsFAQ from '../components/explore/TestimonialsFAQ'
+import EducationCTASection from '../components/EducationCTASection'
 
 const Explore = () => {
   return (
@@ -15,6 +16,7 @@ const Explore = () => {
       <CampusToClient/>
       <CertificationSection/>
       <TestimonialsFAQ/>
+      <EducationCTASection/>
     </main>
   )
 }

@@ -25,16 +25,16 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black text-white  border-t border-gray-700 relative">
+    <footer className="bg-black text-white  relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-12">
         {/* Top Section - 3 Column Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-12">
           {/* Column 1: Stay Updated */}
           <div className="space-y-6">
-            <h4 className="font-bold text-white text-lg">Stay Updated</h4>
+            <h4 className="font-bold text-white text-lg">Contact Details</h4>
 
             {/* Newsletter Signup */}
-            <div className="space-y-3">
+            {/* <div className="space-y-3">
               <p className="text-gray-300 text-sm">
                 Subscribe to our newsletter for the latest updates and educational resources.
               </p>
@@ -48,10 +48,10 @@ const Footer = () => {
                   Subscribe
                 </button>
               </div>
-            </div>
+            </div> */}
 
             {/* Contact Info */}
-            <div className="space-y-2 pt-4">
+            <div className="space-y-2 ">
               <div className="flex items-center gap-2 text-gray-300 text-sm">
                 <i className="ri-mail-fill text-[#8C52FF]"></i>
                 <span>hello@Ini.com</span>

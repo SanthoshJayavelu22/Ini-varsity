@@ -21,48 +21,83 @@ const blogCards = [
   { title: "Future of learning: Blending tech and creativity", img: img7 },
 ];
 
-// Smooth fade-up animation with staggered effect
-const fadeUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: (i) => ({
+// Smoother animations with better easing
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      duration: 0.8
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { 
+    opacity: 0, 
+    y: 40,
+    scale: 0.95
+  },
+  visible: {
     opacity: 1,
     y: 0,
+    scale: 1,
     transition: {
-      duration: 0.8,
-      delay: i * 0.4, // smooth sequential delay
-      ease: [0.25, 0.1, 0.25, 1],
-    },
-  }),
+      duration: 0.7,
+      ease: [0.25, 0.46, 0.45, 0.94] // Smooth ease-out
+    }
+  }
+};
+
+const cardHoverVariants = {
+  hover: {
+    y: -8,
+    scale: 1.03,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut"
+    }
+  }
 };
 
 const EducationSection = () => {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const isInView = useInView(sectionRef, { 
+    once: true, 
+    margin: "-50px", // Reduced margin for earlier trigger
+    amount: 0.3 
+  });
 
   return (
-    <section
+    <motion.section
       ref={sectionRef}
-      className="bg-white text-gray-900 px-4 sm:px-6 md:px-12 py-16 md:py-24 overflow-hidden relative"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      className="relative z-20 bg-white text-gray-900 px-4 sm:px-6 md:px-12 py-20 md:py-28 overflow-hidden rounded-b-[100px] shadow-[0_20px_40px_rgba(0,0,0,0.05)]"
+      style={{ marginTop: "-30vh" }}
     >
-      {/* Floating background dots */}
+      {/* Enhanced floating background dots */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {Array.from({ length: 8 }).map((_, i) => (
+        {Array.from({ length: 12 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-full opacity-10"
+            className="absolute w-2 h-2 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-full opacity-15"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
             animate={{
-              y: [0, -40, 0],
-              x: [0, Math.random() * 30 - 15, 0],
-              scale: [1, 1.5, 1],
-              opacity: [0.1, 0.3, 0.1],
+              y: [0, -30, 0],
+              x: [0, Math.random() * 20 - 10, 0],
+              scale: [1, 1.3, 1],
+              opacity: [0.1, 0.25, 0.1],
             }}
             transition={{
-              duration: 5 + Math.random() * 4,
-              delay: Math.random() * 3,
+              duration: 4 + Math.random() * 3,
+              delay: Math.random() * 2,
               repeat: Infinity,
               ease: "easeInOut",
             }}
@@ -71,144 +106,190 @@ const EducationSection = () => {
       </div>
 
       {/* 🎓 CLASS SCHEDULES SECTION */}
-      <div className="max-w-6xl mx-auto mb-20 relative z-10">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="uppercase text-sm font-semibold mb-2 tracking-wide"
+      <div className="max-w-7xl mx-auto mb-20 relative z-10 px-4 sm:px-6 md:px-12">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
         >
-          UPCOMING
-        </motion.p>
-
-        <div className="flex justify-between items-center flex-wrap gap-4 mb-10">
-          <motion.h2
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text"
+          <motion.p
+            variants={itemVariants}
+            className="uppercase text-sm font-semibold mb-2 tracking-wide text-gray-600"
           >
-            Class Schedules
-          </motion.h2>
+            UPCOMING
+          </motion.p>
 
-          <motion.button
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 10px 30px rgba(140, 82, 255, 0.3)",
-            }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            className="px-5 py-2 text-white rounded-full bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-sm sm:text-base hover:opacity-90 transition-all"
-          >
-            <motion.span
-              animate={{ x: [0, 3, 0] }}
-              transition={{ duration: 2, repeat: Infinity, repeatDelay: 2 }}
+          <div className="flex justify-between items-center flex-wrap gap-4 mb-10">
+            <motion.h2
+              variants={itemVariants}
+              className="text-4xl md:text-5xl font-light bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text"
             >
-              Explore →
-            </motion.span>
-          </motion.button>
-        </div>
+              Class Schedules
+            </motion.h2>
+
+            <motion.button
+              variants={itemVariants}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 15px 35px rgba(140, 82, 255, 0.25)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 400, 
+                damping: 15,
+                hover: { duration: 0.2 }
+              }}
+              className="px-5 py-2 text-white rounded-full bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-sm sm:text-base hover:opacity-90 transition-all"
+            >
+              <motion.span
+                animate={{ x: [0, 4, 0] }}
+                transition={{ 
+                  duration: 2.5, 
+                  repeat: Infinity, 
+                  repeatDelay: 1.5,
+                  ease: "easeInOut"
+                }}
+              >
+                Explore →
+              </motion.span>
+            </motion.button>
+          </div>
+        </motion.div>
 
         {/* Class Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           {classCards.map((card, i) => (
             <motion.div
               key={i}
-              custom={i}
-              variants={fadeUp}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
+              variants={itemVariants}
+              whileHover="hover"
               className="rounded-3xl overflow-hidden h-64 relative group cursor-pointer shadow-lg"
-              whileHover={{
-                y: -10,
-                scale: 1.02,
-                transition: { duration: 0.3 },
-              }}
-            >
-              <img
-                src={card.img}
-                alt={card.title}
-                className="absolute inset-0 w-full h-full object-cover brightness-90 group-hover:brightness-75 transition-all duration-300"
-              />
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-300"></div>
-
-              <div className="absolute bottom-4 left-4 text-white z-10">
-                <h3 className="text-lg sm:text-xl font-semibold mb-1">
-                  {card.title}
-                </h3>
-                <p className="text-sm opacity-80">
-                  Ini sites are designed to ensure fast loading times.
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-      {/* ✨ BLOG SECTION */}
-      <div className="max-w-6xl mx-auto text-center relative z-10">
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="text-2xl sm:text-3xl md:text-4xl font-semibold bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6"
-        >
-          Insights, Inspiration, and more
-        </motion.h2>
-
-        <motion.button
-          whileHover={{
-            scale: 1.05,
-            boxShadow: "0 10px 30px rgba(140, 82, 255, 0.3)",
-          }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}
-          className="px-6 py-2 text-white rounded-full bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-sm sm:text-base mb-12 hover:opacity-90 transition-all"
-        >
-          <motion.span
-            animate={{ x: [0, 3, 0] }}
-            transition={{ duration: 2, repeat: Infinity, repeatDelay: 2 }}
-          >
-            Explore Our Blog
-          </motion.span>
-        </motion.button>
-
-        {/* Blog Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {blogCards.map((card, i) => (
-            <motion.div
-              key={i}
-              custom={i}
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              whileHover={{
-                y: -8,
-                transition: { duration: 0.3 },
-              }}
-              className="bg-[#DDE6F2] rounded-2xl overflow-hidden group cursor-pointer relative shadow-md"
             >
               <motion.div
-                className="h-48 sm:h-56 relative overflow-hidden"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.5 }}
+                variants={cardHoverVariants}
+                className="w-full h-full"
               >
                 <img
                   src={card.img}
                   alt={card.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="absolute inset-0 w-full h-full object-cover brightness-90 group-hover:brightness-75 transition-all duration-500"
                 />
-                <motion.div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-all duration-300" />
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-500"></div>
+
+                <div className="absolute bottom-4 left-4 text-white z-10">
+                  <motion.h3 
+                    className="text-lg sm:text-xl font-semibold mb-1"
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {card.title}
+                  </motion.h3>
+                  <motion.p 
+                    className="text-sm opacity-80"
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    Ini sites are designed to ensure fast loading times.
+                  </motion.p>
+                </div>
+              </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* ✨ BLOG SECTION */}
+      <div className="max-w-7xl mx-auto text-center relative z-10 px-4 sm:px-6 md:px-12">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          <motion.h2
+            variants={itemVariants}
+            className="text-4xl md:text-5xl font-light leading-normal bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6"
+          >
+            Insights, Inspiration, and more
+          </motion.h2>
+
+          <motion.button
+            variants={itemVariants}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0 15px 35px rgba(140, 82, 255, 0.25)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 400, 
+              damping: 15 
+            }}
+            className="px-6 py-2 text-white rounded-full bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-sm sm:text-base mb-12 hover:opacity-90 transition-all"
+          >
+            <motion.span
+              animate={{ x: [0, 4, 0] }}
+              transition={{ 
+                duration: 2.5, 
+                repeat: Infinity, 
+                repeatDelay: 1.5,
+                ease: "easeInOut"
+              }}
+            >
+              Explore Our Blog
+            </motion.span>
+          </motion.button>
+        </motion.div>
+
+        {/* Blog Cards */}
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          {blogCards.map((card, i) => (
+            <motion.div
+              key={i}
+              variants={itemVariants}
+              whileHover="hover"
+              className="bg-[#DDE6F2] rounded-2xl overflow-hidden group cursor-pointer relative shadow-md"
+            >
+              <motion.div
+                variants={cardHoverVariants}
+                className="h-48 sm:h-56 relative overflow-hidden"
+              >
+                <motion.img
+                  src={card.img}
+                  alt={card.title}
+                  className="w-full h-full object-cover"
+                  whileHover={{ 
+                    scale: 1.1,
+                    transition: { duration: 0.6, ease: "easeOut" }
+                  }}
+                />
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"
+                  whileHover={{ opacity: 0.8 }}
+                  transition={{ duration: 0.3 }}
+                />
               </motion.div>
 
               <div className="p-5 flex justify-between items-center relative">
                 <motion.p
                   className="text-sm sm:text-base font-medium text-left pr-4"
-                  whileHover={{ color: "#8C52FF" }}
+                  whileHover={{ 
+                    color: "#8C52FF",
+                    x: 3
+                  }}
                   transition={{ duration: 0.2 }}
                 >
                   {card.title}
@@ -220,7 +301,11 @@ const EducationSection = () => {
                     backgroundColor: "#8C52FF",
                   }}
                   whileTap={{ scale: 0.9 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 500, 
+                    damping: 15 
+                  }}
                   className="bg-black text-white rounded-full p-2 hover:opacity-80 transition-all group"
                 >
                   <motion.svg
@@ -239,31 +324,35 @@ const EducationSection = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Connector animation */}
+        {/* Enhanced connector animation */}
         <motion.div
-          className="flex justify-center mt-12"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          className="flex justify-center mt-16"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
         >
           <motion.div
             className="w-20 h-1 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-full"
             animate={{
-              width: ["80px", "120px", "80px"],
-              opacity: [0.5, 1, 0.5],
+              width: ["80px", "140px", "80px"],
+              opacity: [0.4, 1, 0.4],
+              scale: [1, 1.1, 1],
             }}
             transition={{
-              duration: 3,
+              duration: 3.5,
               repeat: Infinity,
               ease: "easeInOut",
             }}
           />
         </motion.div>
       </div>
-    </section>
+
+      {/* Smooth fade-out gradient at bottom */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+    </motion.section>
   );
 };
 

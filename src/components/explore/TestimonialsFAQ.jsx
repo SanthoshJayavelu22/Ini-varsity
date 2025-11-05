@@ -114,9 +114,50 @@ export default function TestimonialsFAQ() {
     }
   };
 
+  // Floating dots animation
+  const floatingDots = Array.from({ length: 8 }, (_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    delay: Math.random() * 2,
+    duration: 3 + Math.random() * 2
+  }));
+
   return (
-    <section className="bg-white py-20 relative">
-      <div className="max-w-6xl mx-auto px-6">
+    <motion.section 
+      className="relative z-20 bg-white py-20 rounded-b-[100px] shadow-[0_20px_40px_rgba(0,0,0,0.05)]"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 1, ease: "easeOut" }}
+    >
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-b-[100px]">
+        {floatingDots.map((dot) => (
+          <motion.div
+            key={dot.id}
+            className="absolute w-2 h-2 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-full opacity-15"
+            style={{
+              left: `${dot.x}%`,
+              top: `${dot.y}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              x: [0, Math.random() * 20 - 10, 0],
+              scale: [1, 1.3, 1],
+              opacity: [0.1, 0.25, 0.1],
+            }}
+            transition={{
+              duration: dot.duration,
+              delay: dot.delay,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Testimonials */}
         <motion.div 
           className="mb-20"
@@ -132,7 +173,7 @@ export default function TestimonialsFAQ() {
             TESTIMONIALS
           </motion.p>
           <motion.h2 
-            className="text-4xl font-semibold mb-10 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent"
+            className="text-4xl md:text-5xl font-light bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight"
             variants={itemVariants}
           >
             Attendee reviews
@@ -140,16 +181,21 @@ export default function TestimonialsFAQ() {
 
           <div className="grid md:grid-cols-2 gap-6">
             <motion.div 
-              className="bg-[#A8B7FF] text-white p-8 rounded-2xl"
+              className="bg-[#A8B7FF] text-white p-8 rounded-2xl relative overflow-hidden group"
               variants={cardVariants}
               whileHover="hover"
             >
-              <p className="text-lg font-medium mb-6 leading-relaxed">
-                “With my Ini website I landed 4 different interviews and was able
-                to showcase my creativity and expertise.”
+              {/* Subtle hover effect */}
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] opacity-0 group-hover:opacity-10"
+                transition={{ duration: 0.3 }}
+              />
+              <p className="text-lg font-medium mb-6 leading-relaxed relative z-10">
+                "With my Ini website I landed 4 different interviews and was able
+                to showcase my creativity and expertise."
               </p>
-              <div>
-                <p className="font-semibold text-whitek">Jessica Hiney</p>
+              <div className="relative z-10">
+                <p className="font-semibold text-white">Jessica Hiney</p>
                 <p className="text-sm text-white/80">
                   MFA Media Design Full Sail University
                 </p>
@@ -157,15 +203,20 @@ export default function TestimonialsFAQ() {
             </motion.div>
 
             <motion.div 
-              className="bg-[#266C50] text-white p-8 rounded-2xl"
+              className="bg-[#266C50] text-white p-8 rounded-2xl relative overflow-hidden group"
               variants={cardVariants}
               whileHover="hover"
             >
-              <p className="text-lg font-medium mb-6 leading-relaxed">
-                “With my Ini website I landed 4 different interviews and was able
-                to showcase my creativity and expertise.”
+              {/* Subtle hover effect */}
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] opacity-0 group-hover:opacity-10"
+                transition={{ duration: 0.3 }}
+              />
+              <p className="text-lg font-medium mb-6 leading-relaxed relative z-10">
+                "With my Ini website I landed 4 different interviews and was able
+                to showcase my creativity and expertise."
               </p>
-              <div>
+              <div className="relative z-10">
                 <p className="font-semibold text-white">Jessica Hiney</p>
                 <p className="text-sm text-white/80">
                   MFA Media Design Full Sail University
@@ -183,7 +234,7 @@ export default function TestimonialsFAQ() {
           variants={containerVariants}
         >
           <motion.h2 
-            className="text-3xl font-semibold mb-8 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent"
+            className="text-4xl md:text-5xl font-light bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight"
             variants={itemVariants}
           >
             FAQ
@@ -196,24 +247,25 @@ export default function TestimonialsFAQ() {
             {faqs.map((faq) => (
               <motion.div 
                 key={faq.id} 
-                className="py-4"
+                className="py-4 group"
                 variants={itemVariants}
               >
                 <motion.button
                   onClick={() => toggleFAQ(faq.id)}
-                  className="flex justify-between items-center w-full text-left"
+                  className="flex justify-between items-center w-full text-left hover:text-[#8C52FF] transition-colors duration-200"
                   whileHover="hover"
                 >
-                  <span className="text-gray-900 text-base font-normal">
+                  <span className="text-gray-900 text-base font-normal group-hover:text-[#8C52FF] transition-colors duration-200">
                     {faq.question}
                   </span>
                   <motion.div
                     variants={iconVariants}
+                    className="flex-shrink-0 ml-4"
                   >
                     {openFAQ === faq.id ? (
-                      <Minus className="text-gray-600" size={20} />
+                      <Minus className="text-gray-600 group-hover:text-[#8C52FF] transition-colors duration-200" size={20} />
                     ) : (
-                      <Plus className="text-gray-600" size={20} />
+                      <Plus className="text-gray-600 group-hover:text-[#8C52FF] transition-colors duration-200" size={20} />
                     )}
                   </motion.div>
                 </motion.button>
@@ -237,7 +289,33 @@ export default function TestimonialsFAQ() {
             ))}
           </motion.div>
         </motion.div>
+
+        {/* Animated connection lines */}
+        <motion.div
+          className="flex justify-center mt-16"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <motion.div
+            className="w-20 h-1 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-full"
+            animate={{
+              width: ["80px", "140px", "80px"],
+              opacity: [0.4, 1, 0.4],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 3.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </motion.div>
       </div>
-    </section>
+
+      {/* Smooth fade-out gradient at bottom */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none rounded-b-[100px]" />
+    </motion.section>
   );
 }

@@ -125,7 +125,7 @@ export default function TopArticles() {
   return (
     <section className="bg-white pb-20 overflow-hidden relative">
       <motion.div 
-        className="max-w-7xl mx-auto px-6 relative"
+        className="max-w-7xl mx-auto px-6 md:px-12 relative"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
@@ -136,7 +136,7 @@ export default function TopArticles() {
           className="flex justify-between items-center mb-10"
           variants={itemVariants}
         >
-          <h2 className="text-3xl font-semibold">Top Articles</h2>
+          <h2 className="text-4xl md:text-5xl font-light bg-linear-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight">Top Articles</h2>
           <div className="flex gap-3">
             <motion.button
               onClick={() => scroll("left")}

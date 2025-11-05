@@ -42,14 +42,14 @@ const Hero = () => {
   return (
     <section className="relative w-full overflow-hidden bg-white pt-32 pb-24 ">
       <motion.div
-        className="max-w-4xl mx-auto text-center px-6"
+        className="max-w-5xl mx-auto text-center px-6 py-10"
         variants={staggerContainer}
         initial="initial"
         animate="animate"
       >
         {/* Gradient Heading */}
         <motion.h1
-          className="text-4xl md:text-7xl font-light leading-tight"
+          className="text-4xl md:text-[85px] font-light leading-tight"
           variants={fadeInUp}
         >
           <span className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">
