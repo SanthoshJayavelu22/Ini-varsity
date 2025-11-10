@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"; // ✅ Import Link for navigation
 
 const Curriculum = () => {
   const courses = [
@@ -10,24 +11,24 @@ const Curriculum = () => {
         "Students design and implement an omnichannel marketing plan for an eCommerce business.",
     },
     {
-      title: "Digital marketing",
+      title: "Graphic Design",
       description:
-        "Students design and implement an omnichannel marketing plan for an eCommerce business.",
+        "Learn to create visually appealing designs using typography, color, and layout techniques.",
     },
     {
-      title: "Digital marketing",
+      title: "Web Development",
       description:
-        "Students design and implement an omnichannel marketing plan for an eCommerce business.",
+        "Build responsive and dynamic websites using HTML, CSS, JavaScript, and modern frameworks.",
     },
     {
-      title: "Digital marketing",
+      title: "Data Analytics",
       description:
-        "Students design and implement an omnichannel marketing plan for an eCommerce business.",
+        "Analyze data and interpret trends to help businesses make informed decisions.",
     },
     {
-      title: "Digital marketing",
+      title: "UI/UX Design",
       description:
-        "Students design and implement an omnichannel marketing plan for an eCommerce business.",
+        "Understand user experience principles and create intuitive, user-friendly designs.",
     },
   ];
 
@@ -38,9 +39,9 @@ const Curriculum = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   const itemVariants = {
@@ -50,9 +51,9 @@ const Curriculum = () => {
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const courseCardVariants = {
@@ -62,17 +63,18 @@ const Curriculum = () => {
       opacity: 1,
       transition: {
         duration: 0.4,
-        ease: "easeOut"
-      }
+        ease: "easeOut",
+      },
     },
     hover: {
       y: -2,
-      boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
+      boxShadow:
+        "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
       transition: {
         duration: 0.2,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const buttonVariants = {
@@ -80,17 +82,17 @@ const Curriculum = () => {
       scale: 1.02,
       transition: {
         duration: 0.2,
-        ease: "easeOut"
-      }
+        ease: "easeOut",
+      },
     },
     tap: {
-      scale: 0.98
-    }
+      scale: 0.98,
+    },
   };
 
   return (
     <section className="bg-white relative">
-      <motion.div 
+      <motion.div
         className="max-w-7xl m-auto py-20 px-6 md:px-12"
         initial="hidden"
         whileInView="visible"
@@ -98,16 +100,16 @@ const Curriculum = () => {
         variants={containerVariants}
       >
         {/* Header Section */}
-        <motion.div 
+        <motion.div
           className="flex flex-col md:flex-row md:items-start md:justify-between mb-12"
           variants={containerVariants}
         >
           <motion.div variants={itemVariants}>
-            <h2 className="text-4xl md:text-5xl font-light bg-linear-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight">
-              Ini Varsity curriculum
+            <h2 className="text-4xl md:text-5xl font-light bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight">
+              Ini Varsity Curriculum
             </h2>
           </motion.div>
-          <motion.div 
+          <motion.div
             className="max-w-xl text-gray-700 text-[15px] leading-relaxed"
             variants={itemVariants}
           >
@@ -117,7 +119,7 @@ const Curriculum = () => {
               any course format.
             </p>
             <p className="mt-3">
-              Did not find the topic you are teaching?{" "}
+              Didn’t find the topic you are teaching?{" "}
               <motion.a
                 href="#"
                 className="underline text-gray-900 hover:text-gray-700 font-medium"
@@ -131,10 +133,7 @@ const Curriculum = () => {
         </motion.div>
 
         {/* Course List */}
-        <motion.div 
-          className="space-y-6"
-          variants={containerVariants}
-        >
+        <motion.div className="space-y-6" variants={containerVariants}>
           {courses.map((course, index) => (
             <motion.div
               key={index}
@@ -142,42 +141,45 @@ const Curriculum = () => {
               variants={courseCardVariants}
               whileHover="hover"
             >
-              {/* Content with white background */}
               <div className="bg-white rounded-2xl p-10 h-70 md:h-50 flex flex-col md:flex-row md:items-center md:justify-between w-full">
                 {/* Left Text */}
                 <div className="mb-4 md:mb-0">
-                  <h3 className="text-2xl font-sm md:font-medium text-gray-900">
+                  <h3 className="text-2xl font-medium text-gray-900">
                     {course.title}
                   </h3>
-                  <p className="text-gray-700 text-[12px] md:text-[18px] mt-1">
+                  <p className="text-gray-700 text-[14px] md:text-[16px] mt-1">
                     {course.description}
                   </p>
                 </div>
 
-                {/* Right Buttons - unchanged */}
+                {/* Right Buttons */}
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
-                  <motion.button 
-                    className="border border-gray-300 text-md font-sm md:font-medium px-6 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200"
+                  <motion.button
+                    className="border border-gray-300 text-md font-medium px-6 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200"
                     variants={buttonVariants}
                     whileHover="hover"
                     whileTap="tap"
                   >
                     Download Preview
                   </motion.button>
-                  <motion.button 
-                    className="text-md font-sm md:font-medium underline text-gray-900 hover:text-gray-700 flex items-center gap-1"
-                    variants={buttonVariants}
-                    whileHover="hover"
-                    whileTap="tap"
-                  >
-                    Enquiry
-                    <motion.span
-                      whileHover={{ x: 3 }}
-                      transition={{ duration: 0.2 }}
+
+                  {/* ✅ Link to /course page */}
+                  <Link to="/course">
+                    <motion.button
+                      className="text-md font-medium underline text-gray-900 hover:text-gray-700 flex items-center gap-1"
+                      variants={buttonVariants}
+                      whileHover="hover"
+                      whileTap="tap"
                     >
-                      <ArrowRight className="w-4 h-4" />
-                    </motion.span>
-                  </motion.button>
+                      Learn More
+                      <motion.span
+                        whileHover={{ x: 3 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ArrowRight className="w-4 h-4" />
+                      </motion.span>
+                    </motion.button>
+                  </Link>
                 </div>
               </div>
             </motion.div>

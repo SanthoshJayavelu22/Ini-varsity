@@ -9,6 +9,8 @@ import Explore from "./pages/Explore";
 import Blogs from "./pages/Blogs";
 import ContactUs from "./pages/ContactUs";
 import ScrollToTop from "./components/ScrollToTop";
+import CourseOne from "./components/course/courseOne";
+import BlogArticle from "./components/blogs/BlogArticle";
 
 function AppContent() {
   const location = useLocation();
@@ -28,6 +30,8 @@ function AppContent() {
           <Route path="/explore" element={<Explore />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/contact" element={<ContactUs />} />
+             <Route path="/course" element={<CourseOne/>} />
+                  <Route path="/blog/:slug" element={<BlogArticle />} />
         </Routes>
       </main>
 
