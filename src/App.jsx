@@ -9,8 +9,8 @@ import Explore from "./pages/Explore";
 import Blogs from "./pages/Blogs";
 import ContactUs from "./pages/ContactUs";
 import ScrollToTop from "./components/ScrollToTop";
-import CourseOne from "./components/course/courseOne";
 import BlogArticle from "./components/blogs/BlogArticle";
+import CourseOne from "./components/course/CourseOne";
 
 function AppContent() {
   const location = useLocation();
