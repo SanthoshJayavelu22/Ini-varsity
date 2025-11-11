@@ -240,7 +240,7 @@ export default function TopArticles() {
         </div>
 
         {/* View All Articles Link */}
-        <motion.div 
+        {/* <motion.div 
           className="text-center mt-12"
           variants={itemVariants}
         >
@@ -264,12 +264,12 @@ export default function TopArticles() {
               />
             </svg>
           </Link>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
 
       {/* Gradient Fade on Sides */}
-      <div className="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
-      <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+      <div className="absolute top-0 left-0 w-20 h-full  pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-20 h-full  pointer-events-none"></div>
     </section>
   );
 }

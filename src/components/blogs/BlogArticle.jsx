@@ -218,7 +218,7 @@ const BlogArticle = () => {
       </article>
 
       {/* Author Bio */}
-      <section className="max-w-4xl mx-auto px-6 md:px-12 py-16">
+      {/* <section className="max-w-4xl mx-auto px-6 md:px-12 py-16">
         <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
           <div className="flex items-start gap-6">
             <img
@@ -242,7 +242,7 @@ const BlogArticle = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Related Articles */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 bg-white">
@@ -282,7 +282,7 @@ const BlogArticle = () => {
       </section>
 
       {/* Newsletter Subscription */}
-      <section className="max-w-4xl mx-auto px-6 md:px-12 py-20">
+      {/* <section className="max-w-4xl mx-auto px-6 md:px-12 py-20">
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-center text-white">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Stay Updated with Our Latest Insights</h2>
           <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
@@ -299,7 +299,7 @@ const BlogArticle = () => {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

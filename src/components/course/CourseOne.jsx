@@ -2,15 +2,15 @@ import React from 'react';
 
 const CourseOne = () => {
   return (
-    <div className="font-sans text-gray-800 mt-20">
+    <div className=" mt-20">
 
 
       {/* Hero Section */}
-      <section className="bg-blue-100 p-10 md:p-16 flex flex-col md:flex-row justify-between items-center">
-        <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center px-6 md:px-12">
+      <section className="bg-blue-100 p-5 md:p-16 flex flex-col md:flex-row justify-between items-center">
+        <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center  md:px-12">
           <div className="max-w-2xl">
-            <p className="uppercase text-sm tracking-wider text-gray-600 mb-2">Ini ACADEMIC CERTIFICATIONS</p>
-            <h2 className="text-5xl font-light mb-6">Foundations Certifications</h2>
+            <p className="uppercase text-sm tracking-wider text-gray-800 mb-2">Ini ACADEMIC CERTIFICATIONS</p>
+            <h2 className="text-4xl md:text-5xl font-light leading-normal bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6">Foundations Certifications</h2>
             <p className="text-gray-700 leading-relaxed">
               The Ini Foundations Certification proves your digital skills through hands-on website building. Modular training helps you earn an industry-recognized credential and stand out in the job market.
             </p>
@@ -26,7 +26,7 @@ const CourseOne = () => {
 
       {/* Who is this for */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-16">
-        <h3 className="text-2xl font-light mb-6">Who is this for</h3>
+        <h3 className="text-4xl md:text-5xl font-light leading-normal bg-gradient-to-t from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6">Who is this for</h3>
         <p className="text-gray-700 leading-relaxed">
           Students, recent graduates, and professionals building their first Ini website who want to demonstrate their emerging digital skills for employers, recruiters, and their network.
         </p>
@@ -37,7 +37,7 @@ const CourseOne = () => {
 
       {/* What you will learn */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 border-t border-gray-200">
-        <h3 className="text-2xl font-light mb-6">What you will learn:</h3>
+        <h3 className="text-4xl md:text-5xl font-light leading-normal bg-gradient-to-t from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6">What you will learn:</h3>
         <ul className="list-disc ml-6 text-gray-700 space-y-2">
           <li>3 simple steps to plan your site with ease</li>
           <li>Showcase your skills and value to any audience</li>
@@ -47,7 +47,7 @@ const CourseOne = () => {
 
       {/* How to get certified */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-16">
-        <h3 className="text-3xl font-light mb-10">How to get certified</h3>
+        <h3 className="text-4xl md:text-5xl font-light leading-normal bg-gradient-to-t from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6">How to get certified</h3>
         <div className="space-y-6">
           {[ 
             { step: '01', text: 'Enroll in the Ini Foundations Pathway' },
@@ -63,7 +63,7 @@ const CourseOne = () => {
       </section>
 
       {/* Showcase Section */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
+      {/* <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
         <div className="flex justify-between items-center mb-8">
           <h3 className="text-3xl font-light">Creators showcase their websites</h3>
           <p className="text-sm text-gray-600 max-w-sm text-right">
@@ -99,7 +99,7 @@ const CourseOne = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
 
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { Download } from "lucide-react"; 
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom"; // ✅ Import Link for navigation
+import { Link } from "react-router-dom";
 
 const Curriculum = () => {
   const courses = [
@@ -32,7 +32,6 @@ const Curriculum = () => {
     },
   ];
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -49,10 +48,7 @@ const Curriculum = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   };
 
@@ -61,39 +57,25 @@ const Curriculum = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.4, ease: "easeOut" },
     },
     hover: {
       y: -2,
       boxShadow:
         "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
-      transition: {
-        duration: 0.2,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.2, ease: "easeOut" },
     },
   };
 
   const buttonVariants = {
-    hover: {
-      scale: 1.02,
-      transition: {
-        duration: 0.2,
-        ease: "easeOut",
-      },
-    },
-    tap: {
-      scale: 0.98,
-    },
+    hover: { scale: 1.02, transition: { duration: 0.2, ease: "easeOut" } },
+    tap: { scale: 0.98 },
   };
 
   return (
     <section className="bg-white relative">
       <motion.div
-        className="max-w-7xl m-auto py-20 px-6 md:px-12"
+        className="max-w-7xl m-auto py-0 md:py-20 px-6 md:px-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
@@ -109,14 +91,15 @@ const Curriculum = () => {
               Ini Varsity Curriculum
             </h2>
           </motion.div>
+
           <motion.div
             className="max-w-xl text-gray-700 text-[15px] leading-relaxed"
             variants={itemVariants}
           >
             <p>
               Our ready-to-use, career-focused curriculum saves faculty time and
-              gives students hands-on, cross-disciplinary skill application—across
-              any course format.
+              gives students hands-on, cross-disciplinary skill application—
+              across any course format.
             </p>
             <p className="mt-3">
               Didn’t find the topic you are teaching?{" "}
@@ -154,32 +137,31 @@ const Curriculum = () => {
 
                 {/* Right Buttons */}
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
-                  <motion.button
-                    className="border border-gray-300 text-md font-medium px-6 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200"
+                    <Link to="/course"> <motion.button
+                    className="border border-gray-300 text-md font-medium px-6 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2"
                     variants={buttonVariants}
                     whileHover="hover"
                     whileTap="tap"
                   >
-                    Download Preview
-                  </motion.button>
-
-                  {/* ✅ Link to /course page */}
-                  <Link to="/course">
+               
+                Enroll Now
+                  </motion.button>  </Link>
+  
                     <motion.button
                       className="text-md font-medium underline text-gray-900 hover:text-gray-700 flex items-center gap-1"
                       variants={buttonVariants}
                       whileHover="hover"
                       whileTap="tap"
                     >
-                      Learn More
+                      Curriculum
                       <motion.span
                         whileHover={{ x: 3 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <ArrowRight className="w-4 h-4" />
+                        <Download className="w-4 h-4" /> {/* ✅ Changed here too */}
                       </motion.span>
                     </motion.button>
-                  </Link>
+                
                 </div>
               </div>
             </motion.div>

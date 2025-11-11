@@ -76,7 +76,7 @@ const EditorsPick = () => {
   };
 
   return (
-    <section className="px-6 md:px-16 py-12 bg-white relative">
+    <section className="px-0 md:px-16 py-12 bg-white relative">
       <motion.div 
         className="max-w-7xl m-auto px-6 md:px-12 py-12"
         initial="hidden"
@@ -85,7 +85,7 @@ const EditorsPick = () => {
         variants={containerVariants}
       >
         <motion.h2 
-          className="text-4xl md:text-5xl font-light bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight"
+          className="text-4xl md:text-5xl font-light bg-gradient-to-t from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight"
           variants={itemVariants}
         >
           Editor's Pick
@@ -141,7 +141,7 @@ const EditorsPick = () => {
         </div>
 
         {/* View All Blog Posts Link */}
-        <motion.div 
+        {/* <motion.div 
           className="text-center mt-12"
           variants={itemVariants}
         >
@@ -165,7 +165,7 @@ const EditorsPick = () => {
               />
             </svg>
           </Link>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </section>
   );

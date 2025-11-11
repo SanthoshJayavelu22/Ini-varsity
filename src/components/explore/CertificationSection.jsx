@@ -2,6 +2,9 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import img1 from "../../assets/images/Group.png";
+import { Link } from "react-router-dom";
+import { Download } from "lucide-react"; 
+
 
 const certifications = [
   {
@@ -156,13 +159,13 @@ export default function CertificationSection() {
             >
               {/* Left side */}
               <div className="flex items-center gap-4 w-full md:w-1/2">
-                <motion.img
+                {/* <motion.img
                   src={cert.image}
                   alt={cert.title}
                   className="w-20 h-20 object-contain"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
-                />
+                /> */}
                 <h3 className="text-lg font-medium text-gray-900">
                   {cert.title}
                 </h3>
@@ -174,23 +177,24 @@ export default function CertificationSection() {
                   {cert.description}
                 </p>
                 <div className="flex gap-3 md:justify-end flex-wrap">
-                  <motion.button 
+                  <Link to="/course">  <motion.button 
                     className="bg-[#fff] border border-gray-300 rounded-full px-5 py-2 text-sm font-medium hover:bg-gray-100 transition"
                     variants={buttonVariants}
                     whileHover="hover"
                     whileTap="tap"
                   >
                     Enroll Now
-                  </motion.button>
+                  </motion.button>  </Link>
                   <motion.button 
                     className="flex items-center gap-2 text-sm font-medium text-gray-800 underline"
                     variants={buttonVariants}
                     whileHover="hover"
                     whileTap="tap"
                   >
-                    Learn more 
+                   Curriculum
+
                     <motion.span variants={arrowVariants}>
-                      <ArrowRight size={16} />
+                      <Download className="w-4 h-4" />
                     </motion.span>
                   </motion.button>
                 </div>

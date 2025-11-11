@@ -34,7 +34,7 @@ const AboutMission = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            Connecting dots, <br /> Through education
+            Connecting dots, <br /> through research
           </motion.h2>
 
           <motion.div
@@ -44,15 +44,18 @@ const AboutMission = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <p className="text-gray-700 leading-relaxed mb-6 text-justify">
-              At INI, we’re more than an institute; we’re a catalyst for the future, dedicated to nurturing the innovators, deep thinkers, and influential leaders of tomorrow. Our heartbeat is the holistic development of our students and the advancement of STEM excellence through an unparalleled, transformative learning experience. Our distinctive, research-integrated approach is engineered to cultivate vital 21st-century proficiencies, including sharp critical analysis, inventive creativity, and practical, impactful problem-solving.
+              At INI, we are more than a research organization — we are a catalyst for the future. Our mission is to nurture innovators, deep thinkers, and emerging leaders through a research-driven ecosystem that transforms curiosity into discovery and knowledge into impact.
+
+
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6 text-justify">
-              Beyond our academic and research endeavors, we are a hub for vibrant intellectual exchange, organizing engaging forums, illuminating webinars, and significant conferences that foster open dialogue, facilitate knowledge transfer, and strengthen a cohesive, collaborative community. Our commitment extends to strategic partnerships with innovative startups and esteemed research institutions, co-leading impactful research initiatives and publishing pivotal insights via our platform.
+             INI Varsity brings research-based education to school students, graduates, and early-career professionals, empowering them to think beyond conventional boundaries. Our programs bridge learning with real-world application, inspiring every learner to explore, experiment, and evolve into change-makers of tomorrow.
+
             </p>
 
             <p className="text-gray-700 leading-relaxed text-justify">
-              "We wholeheartedly believe that true intellect blossoms when fueled by curiosity, integrity, and a profound sense of purpose, and our driving force is to awaken that potential within every learner.”
+              Beyond education, INI stands as a hub of collaboration and innovation, hosting forums, webinars, and conferences that foster intellectual exchange and strengthen the spirit of community. Through partnerships with pioneering startups and renowned research institutions, we co-lead impactful initiatives and publish meaningful insights — continually contributing to the global knowledge ecosystem.
             </p>
           </motion.div>
         </motion.div>

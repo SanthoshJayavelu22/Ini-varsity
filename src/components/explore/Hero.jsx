@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import img1 from "../../assets/images/img-4.jpg";
 import img2 from "../../assets/images/img-15.jpg";
 import img3 from "../../assets/images/img-16.jpg";
@@ -40,7 +41,7 @@ const staggerContainer = {
 
 const Hero = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-white pt-32 pb-24 ">
+    <section className="relative w-full overflow-hidden bg-white pt-20 md:pt-32 pb-10 md:pb-24 ">
       <motion.div
         className="max-w-5xl mx-auto text-center px-6 py-10"
         variants={staggerContainer}
@@ -49,7 +50,7 @@ const Hero = () => {
       >
         {/* Gradient Heading */}
         <motion.h1
-          className="text-4xl md:text-[85px] font-light leading-tight"
+          className="text-3xl md:text-[85px] font-light leading-tight"
           variants={fadeInUp}
         >
           <span className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">
@@ -71,6 +72,7 @@ const Hero = () => {
         </motion.p>
 
         {/* Gradient Button */}
+         <Link to="/contact">
         <motion.button
           className="mt-8 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white font-medium px-8 py-3 rounded-full hover:opacity-90 transition"
           variants={fadeInUp}
@@ -78,7 +80,7 @@ const Hero = () => {
           whileTap={{ scale: 0.95 }}
         >
           Get Started
-        </motion.button>
+        </motion.button></Link>  
       </motion.div>
 
       {/* Top Scrolling Row */}

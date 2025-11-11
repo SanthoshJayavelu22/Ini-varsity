@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { Link } from "react-router-dom"; 
 
 const FloatingDot = ({ delay, size, x, y }) => {
   return (
     <motion.div
-      className={`absolute rounded-full bg-gradient-to-r from-[#8C52FF] to-[#FF5757]`}
+      className="absolute rounded-full bg-gradient-to-r from-[#8C52FF] to-[#FF5757]"
       style={{
         width: size,
         height: size,
@@ -31,11 +32,11 @@ const Hero = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
-  // Generate random positions for small floating circles
+  // Generate random positions for floating dots
   const floatingElements = Array.from({ length: 15 }).map((_, i) => ({
     delay: i * 0.5,
-    size: `${Math.random() * 8 + 4}px`, // between 4px and 12px
-    x: Math.random() * 100, // 0% - 100%
+    size: `${Math.random() * 8 + 4}px`,
+    x: Math.random() * 100,
     y: Math.random() * 100,
   }));
 
@@ -94,29 +95,27 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-10"
         >
-          <motion.button
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 20px 40px rgba(140, 82, 255, 0.3)",
-            }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white px-10 py-3 rounded-full text-lg font-medium shadow-md hover:shadow-lg transition-all duration-300"
-          >
-            <motion.span
-              animate={{
-                scale: [1, 1.02, 1],
-                transition: {
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatDelay: 3,
-                },
+     
+          <Link to="/contact">
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 20px 40px rgba(140, 82, 255, 0.3)",
               }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white px-10 py-3 rounded-full text-lg font-medium shadow-md hover:shadow-lg transition-all duration-300"
             >
-              Get Started
-            </motion.span>
-          </motion.button>
-      
+              <motion.span
+                animate={{
+                  scale: [1, 1.02, 1],
+                  transition: { duration: 2, repeat: Infinity, repeatDelay: 3 },
+                }}
+              >
+                Get Started
+              </motion.span>
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

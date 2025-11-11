@@ -4,6 +4,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import img1 from "../../assets/images/img-4.jpg";
 import img2 from "../../assets/images/img-2.png";
 import img3 from "../../assets/images/img-16.jpg";
+import shiva from "../../assets/images/shiva.jpg";
 
 // FAQ Data + matching Unsplash images
 const faqs = [
@@ -49,7 +50,7 @@ const team = [
   {
     name: "Shivaganesh Gunasekaran",
     role: "Founder & CEO",
-    img: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=400&q=80",
+    img: shiva,
   },
   {
     name: "Surendhar Ganesh",
@@ -187,7 +188,7 @@ const WhatWeDo = () => {
             </motion.h3>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
             {team.map((member, i) => (
               <motion.div
                 key={i}
@@ -208,7 +209,7 @@ const WhatWeDo = () => {
                 className="bg-[#f2f6fa] rounded-2xl shadow-sm text-center py-8 hover:shadow-md transition-all cursor-pointer"
               >
                 <motion.div 
-                  className="w-60 h-50 bg-[#f2f6fa] rounded-xl mx-auto mb-4 overflow-hidden"
+                  className="w-80 h-90 bg-[#f2f6fa] rounded-xl mx-auto mb-4 overflow-hidden"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 >

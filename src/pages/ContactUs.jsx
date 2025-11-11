@@ -93,13 +93,15 @@ const ContactUs = () => {
           className="text-center mb-16"
           variants={itemVariants}
         >
+
+          
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent mb-4"
+            className="text-2xl md:text-7xl font-light leading-normal bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            Get in Touch
+        "Every Great Collaboration<br/> Begins with a Conversation."
           </motion.h2>
           <motion.p 
             className="text-gray-600 text-lg max-w-2xl mx-auto"

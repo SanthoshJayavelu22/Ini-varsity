@@ -71,7 +71,7 @@ export default function HeroBlog() {
           <p className="uppercase text-sm tracking-wide text-gray-700 mb-3">
             {featuredPost.category}
           </p>
-          <h2 className="text-5xl font-semibold leading-tight mb-6">
+          <h2 className="text-2xl md:text-5xl font-semibold leading-tight mb-6">
             {featuredPost.title}
           </h2>
           <p className="text-gray-600 text-lg mb-6 leading-relaxed">

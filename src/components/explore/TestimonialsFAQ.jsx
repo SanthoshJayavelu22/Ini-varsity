@@ -173,7 +173,7 @@ export default function TestimonialsFAQ() {
             TESTIMONIALS
           </motion.p>
           <motion.h2 
-            className="text-4xl md:text-5xl font-light bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight"
+            className="text-4xl md:text-5xl font-light bg-gradient-to-t from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight"
             variants={itemVariants}
           >
             Attendee reviews
@@ -234,7 +234,7 @@ export default function TestimonialsFAQ() {
           variants={containerVariants}
         >
           <motion.h2 
-            className="text-4xl md:text-5xl font-light bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight"
+            className="text-4xl md:text-5xl font-light bg-gradient-to-t from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight"
             variants={itemVariants}
           >
             FAQ
