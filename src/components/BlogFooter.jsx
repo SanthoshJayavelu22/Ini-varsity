@@ -44,6 +44,11 @@ const Footer = () => {
       href: "https://youtube.com/@inivarsity?si=e0uXdvZYDABDLLwp",
       label: "YouTube",
     },
+       {
+      icon: "linkedin-fill",
+      href: "https://www.linkedin.com/company/inivarsity/",
+      label: "LinkedIn",
+    },
   ];
 
   return (
@@ -134,17 +139,11 @@ const Footer = () => {
 
           {/* Bottom Section */}
           <div className="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-gray-700">
-            <div className="flex gap-6 text-sm text-gray-400 mb-4 sm:mb-0">
-              <a href="/privacy" className="hover:text-[#8C52FF] transition-colors">
-                Privacy Policy
-              </a>
-              <a href="/terms" className="hover:text-[#8C52FF] transition-colors">
-                Terms of Service
-              </a>
-              <a href="/returns" className="hover:text-[#8C52FF] transition-colors">
-                Return Policy
-              </a>
-            </div>
+           <div className="flex gap-6 text-sm text-gray-400 mb-4 sm:mb-0">
+            <a href="/privacy" className="hover:text-[#8C52FF] transition-colors">Privacy Policy</a>
+            <a href="/terms" className="hover:text-[#8C52FF] transition-colors">Terms of Service</a>
+            <a href="/refund" className="hover:text-[#8C52FF] transition-colors">Refund Policy</a>
+          </div>
     <div className="text-sm text-gray-400">
             <p>
               Designed & Developed By:{" "}

@@ -11,7 +11,7 @@ const VideoCards = () => {
   const loopImages = [...images, ...images, ...images];
 
   return (
-    <section className="relative h-screen bg-amber-200 flex items-center justify-center overflow-hidden mt-15 md:mt-36 mb-30 pb-20">
+    <section className="relative h-screen bg-[#bdbaf7] flex items-center justify-center overflow-hidden mt-15 md:mt-36 mb-30 pb-20">
       <motion.div
         className="flex gap-8"
         animate={{

@@ -31,15 +31,7 @@ const cards = [
     readTime: "6 min read",
     category: "Creativity"
   },
-  {
-    id: 4,
-    title: "Tips for making your online portfolio stand out",
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80",
-    slug: "portfolio-stand-out-tips",
-    excerpt: "Essential tips to create a portfolio that captures attention and lands you dream projects.",
-    readTime: "7 min read",
-    category: "Portfolio"
-  },
+
 ];
 
 const EditorsPick = () => {
@@ -91,24 +83,24 @@ const EditorsPick = () => {
           Editor's Pick
         </motion.h2>
 
-        <div className="flex space-x-6 overflow-x-auto scrollbar-hide pb-4">
+        <div className="flex space-x-8 overflow-x-auto scrollbar-hide pb-4">
           {cards.map((card) => (
             <motion.div
               key={card.id}
-              className="flex-shrink-0 w-80 md:w-96 cursor-pointer"
+              className="flex-shrink-0 w-80 md:w-90 cursor-pointer"
               variants={itemVariants}
               whileHover="hover"
             >
               <Link 
                 to={`/blog/${card.slug}`} 
-                // If using Next.js, use: href={`/blog/${card.slug}`}
+            
                 className="block group"
               >
                 <div className="relative overflow-hidden rounded-lg">
                   <motion.img
                     src={card.img}
                     alt={card.title}
-                    className="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-50 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-medium rounded-full">

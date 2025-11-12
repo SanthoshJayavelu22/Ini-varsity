@@ -14,30 +14,30 @@ export const ReturnsPolicy = () => {
     <div className="min-h-screen bg-white text-gray-900 py-16 px-6 md:px-12 mt-20">
       <div className="max-w-6xl mx-auto">
         <header className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-light bg-gradient-to-t from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">Return & Refund Policy</h1>
+          <h1 className="text-4xl md:text-5xl font-light bg-gradient-to-t from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">Refund Policy</h1>
           <p className="mt-3 text-gray-600">Clear, fair and simple — our promise to customers.</p>
         </header>
 
         <section className="space-y-6 text-gray-700 leading-relaxed">
           <p>
-            At INI we design experiences and products with care. If you are not fully satisfied with a purchase, our returns and refunds process is built to be as transparent and hassle-free as our learning experiences are transformational.
+            At INI we design experiences and products with care. If you are not fully satisfied with a purchase, our refunds process is built to be as transparent and hassle-free as our learning experiences are transformational.
           </p>
 
           <div>
-            <h2 className="text-2xl font-medium mt-4 mb-2">Eligibility for Returns</h2>
+            <h2 className="text-2xl font-medium mt-4 mb-2">Eligibility for Refunds</h2>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Physical products are eligible for return within <strong>14 days</strong> of delivery, provided they are unused and in original packaging.</li>
+              <li>Physical products are eligible for refund within <strong>14 days</strong> of delivery, provided they are unused and in original packaging.</li>
               <li>Digital products, online courses, and access-based services (including subscriptions) are non-refundable once access has been granted or course material has been downloaded, except where required by law.</li>
               <li>If a product arrives damaged or defective, please contact us within <strong>7 days</strong> so we can resolve the issue promptly.</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-2xl font-medium mt-4 mb-2">How to Request a Return</h2>
+            <h2 className="text-2xl font-medium mt-4 mb-2">How to Request a Refund</h2>
             <ol className="list-decimal pl-6 space-y-2">
               <li>Contact our support team via the <Link to="/contact" className="text-[#8C52FF] underline">Contact page</Link> with your order number and a brief description.</li>
               <li>Hold on to your original packaging and proof of purchase.</li>
-              <li>Once your return is approved we will provide next steps and a refund timeline.</li>
+              <li>Once your refund is approved we will provide next steps and a refund timeline.</li>
             </ol>
           </div>
 
@@ -51,7 +51,7 @@ export const ReturnsPolicy = () => {
           <div>
             <h2 className="text-2xl font-medium mt-4 mb-2">Contact Us</h2>
             <p>
-              If you have questions or need help with a return, please reach out via our <Link to="/contact" className="text-[#8C52FF] underline">Contact page</Link>. We aim to respond to all requests within 48 hours.
+              If you have questions or need help with a refund, please reach out via our <Link to="/contact" className="text-[#8C52FF] underline">Contact page</Link>. We aim to respond to all requests within 48 hours.
             </p>
           </div>
 

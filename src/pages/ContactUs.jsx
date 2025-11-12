@@ -234,8 +234,8 @@ const ContactUs = () => {
                 </div>
                 <div className="text-left">
                   <h3 className="font-bold text-gray-900 text-lg">Phone</h3>
-                  <p className="text-gray-600 mt-1">+91 98765 43210</p>
-                  <p className="text-sm text-gray-500 mt-2">Mon-Fri from 9am to 6pm</p>
+                  <p className="text-gray-600 mt-1">+91 9944840454</p>
+                  {/* <p className="text-sm text-gray-500 mt-2">Mon-Fri from 9am to 6pm</p> */}
                 </div>
               </motion.div>
 
@@ -250,7 +250,7 @@ const ContactUs = () => {
                 </div>
                 <div className="text-left">
                   <h3 className="font-bold text-gray-900 text-lg">Email</h3>
-                  <p className="text-gray-600 mt-1">support@inivarsity.com</p>
+                  <p className="text-gray-600 mt-1">info@inivarsity.com</p>
                   <p className="text-sm text-gray-500 mt-2">We'll reply within 24 hours</p>
                 </div>
               </motion.div>

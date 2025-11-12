@@ -9,7 +9,7 @@ export default function TopArticles() {
 
   const scroll = (direction) => {
     if (scrollRef.current) {
-      const scrollAmount = scrollRef.current.offsetWidth * 0.9;
+      const scrollAmount = scrollRef.current.offsetWidth * 0.8;
       scrollRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -185,91 +185,61 @@ export default function TopArticles() {
           </div>
         </motion.div>
 
-        {/* SCROLLABLE GRID */}
+        {/* SINGLE ROW SCROLLABLE CONTAINER */}
         <div
           ref={scrollRef}
-          className="flex gap-8 overflow-x-auto scroll-smooth scrollbar-hide snap-x snap-mandatory"
+          className="flex gap-8 overflow-x-auto scroll-smooth scrollbar-hide snap-x snap-mandatory pb-6"
         >
-          {/* 2 rows grid */}
-          <div className="grid grid-rows-2 grid-flow-col gap-8">
-            {articles.map((article, index) => (
-              <motion.div
-                key={article.id}
-                className="min-w-[220px] md:min-w-[500px] snap-start transition-transform cursor-pointer"
-                variants={itemVariants}
-                whileHover="hover"
-                custom={index}
+          {articles.map((article, index) => (
+            <motion.div
+              key={article.id}
+              className="flex-shrink-0 w-80 md:w-96 snap-start transition-transform cursor-pointer"
+              variants={itemVariants}
+              whileHover="hover"
+              custom={index}
+            >
+              <Link 
+                to={`/blog/${article.slug}`}
+                className="block group"
               >
-                <Link 
-                  to={`/blog/${article.slug}`}
-                  // If using Next.js, use: href={`/blog/${article.slug}`}
-                  className="block group"
+                <motion.div 
+                  className="w-full h-64 md:h-70 rounded-xl overflow-hidden mb-4 relative"
+                  variants={cardVariants}
                 >
-                  <motion.div 
-                    className="w-full h-[150px] md:h-[350px] rounded-xl overflow-hidden mb-4 relative"
-                    variants={cardVariants}
-                  >
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-end p-4">
-                      <span className="text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/70 px-3 py-1 rounded-full">
-                        {article.readTime}
-                      </span>
-                    </div>
-                  </motion.div>
-                  <p className="uppercase text-xs tracking-wide text-gray-600 mb-1">
-                    {article.category}
-                  </p>
-                  <h3 className="text-lg font-medium text-black leading-snug group-hover:text-[#8C52FF] transition-colors duration-300">
-                    {article.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 mt-2 line-clamp-2">
-                    {article.excerpt}
-                  </p>
-                  <div className="mt-3 flex items-center text-sm text-gray-500 group-hover:text-[#FF5757] transition-colors duration-300">
-                    <span>Read article →</span>
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-end p-4">
+                    <span className="text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/70 px-3 py-1 rounded-full">
+                      {article.readTime}
+                    </span>
                   </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+                </motion.div>
+                <p className="uppercase text-xs tracking-wide text-gray-600 mb-2">
+                  {article.category}
+                </p>
+                <h3 className="text-xl font-semibold text-black leading-tight group-hover:text-[#8C52FF] transition-colors duration-300 mb-3">
+                  {article.title}
+                </h3>
+                <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                  {article.excerpt}
+                </p>
+                <div className="flex items-center text-sm text-gray-500 group-hover:text-[#FF5757] transition-colors duration-300">
+                  <span>Read article →</span>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
         </div>
 
-        {/* View All Articles Link */}
-        {/* <motion.div 
-          className="text-center mt-12"
-          variants={itemVariants}
-        >
-          <Link 
-            to="/blog"
-            // If using Next.js, use: href="/blog"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105"
-          >
-            View All Articles
-            <svg 
-              className="w-4 h-4 ml-2" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M14 5l7 7m0 0l-7 7m7-7H3" 
-              />
-            </svg>
-          </Link>
-        </motion.div> */}
       </motion.div>
 
       {/* Gradient Fade on Sides */}
       <div className="absolute top-0 left-0 w-20 h-full  pointer-events-none"></div>
-      <div className="absolute top-0 right-0 w-20 h-full  pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-20 h-full pointer-events-none"></div>
     </section>
   );
 }

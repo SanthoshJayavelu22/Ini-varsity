@@ -34,7 +34,7 @@ function AppContent() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/course" element={<CourseOne />} />
           <Route path="/blog/:slug" element={<BlogArticle />} />
-          <Route path="/returns" element={<ReturnsPolicy />} />
+          <Route path="/refund" element={<ReturnsPolicy />} />
 <Route path="/privacy" element={<PrivacyPolicy />} />
 <Route path="/terms" element={<TermsAndConditions />} />
         </Routes>

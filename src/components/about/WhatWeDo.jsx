@@ -82,7 +82,7 @@ const WhatWeDo = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-sm font-semibold text-gray-500 mb-2">
+            <p className="text-md font-semibold tracking-wider text-gray-500 mb-3">
               our services
             </p>
             <h2 className="text-4xl md:text-5xl leading-normal font-light text-transparent bg-clip-text bg-gradient-to-r from-[#8C52FF] to-[#FF5757] mb-6">
@@ -173,7 +173,7 @@ const WhatWeDo = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-sm font-semibold text-gray-600 mb-2"
+              className="text-md font-semibold tracking-wider text-gray-500 mb-3"
             >
               Core Crew
             </motion.p>

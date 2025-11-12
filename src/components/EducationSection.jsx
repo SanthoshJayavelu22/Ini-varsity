@@ -142,11 +142,11 @@ const EducationSection = () => {
                         Ini sites are designed to ensure fast loading times.
                       </p>
                     </div>
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {/* <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="bg-black/50 rounded-full px-6 py-3 text-white font-medium backdrop-blur-sm">
                         View Course Details →
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </Link>
               </motion.div>

@@ -14,7 +14,7 @@ const EducationCTASection = () => {
   }, [words.length]);
 
   return (
-<section className="relative z-10 -mt-24 bg-amber-200 text-gray-900 pt-70 pb-40 px-4 sm:px-6 md:px-12">
+<section className="relative z-10 -mt-24 bg-[#bdbaf7] text-gray-900 pt-70 pb-40 px-4 sm:px-6 md:px-12">
 
       <div className="max-w-7xl mx-auto text-center">
         <motion.h1

@@ -60,52 +60,95 @@ const FeaturedSection = () => {
   };
 
   return (
-    <section className="bg-black text-white relative">
-      <motion.div 
-        className="max-w-7xl m-auto px-6 md:px-12 py-12 flex flex-col md:flex-row items-center justify-between"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
-        variants={containerVariants}
-      >
-        {/* Left Image */}
+    <section className="bg-black text-white relative min-h-screen">
+      <div className="flex flex-col md:flex-row h-full">
+      
         <motion.div 
-          className="w-full md:w-1/2"
+          className="w-full md:w-1/2 h-screen "
           variants={imageVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
           whileHover="hover"
         >
           <img
             src={img1}
-            alt="AI Tools"
-            className="w-full rounded-lg"
+            alt="Space Exploration"
+            className="w-full h-full object-cover"
           />
         </motion.div>
 
-        {/* Right Text */}
+        {/* Right Content - Space related */}
         <motion.div 
-          className="w-full md:w-1/2 md:pl-10 mt-6 md:mt-0"
-          variants={itemVariants}
+          className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
         >
-          <p className="uppercase text-sm text-gray-300 tracking-wide mb-2">
-            AI Knowledge Hub
-          </p>
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4 leading-snug">
-            Your always up-to-date guide to Ini's AI tools
-          </h2>
-          <p className="text-gray-400 mb-6">
-            View the full menu of Ini's AI tools for web design, site creation,
-            marketing and more.
-          </p>
-          <motion.button 
-            className="border border-white px-6 py-2 rounded-full text-sm hover:bg-white hover:text-black transition"
-            variants={buttonVariants}
-            whileHover="hover"
-            whileTap="tap"
-          >
-            Read more
-          </motion.button>
+          <div className="max-w-lg">
+            <motion.p 
+              className="uppercase text-sm text-gray-300 tracking-wide mb-4"
+              variants={itemVariants}
+            >
+              Space Exploration & Astronomy
+            </motion.p>
+            
+            <motion.h2 
+              className="text-4xl md:text-5xl font-semibold mb-6 leading-tight"
+              variants={itemVariants}
+            >
+              Discover the wonders of our universe
+            </motion.h2>
+            
+            <motion.p 
+              className="text-gray-400 mb-6 text-lg leading-relaxed"
+              variants={itemVariants}
+            >
+              Explore the latest discoveries in space technology, astronomical phenomena, 
+              and cosmic research. From distant galaxies to our own solar system, 
+              uncover the mysteries of the cosmos.
+            </motion.p>
+
+            <motion.p 
+              className="text-gray-300 mb-8 text-sm"
+              variants={itemVariants}
+            >
+              Featured resource:{" "}
+              <a 
+                href="https://www.icosmopedia.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white hover:text-blue-400 underline transition-colors duration-300"
+              >
+                www.icosmopedia.com
+              </a>
+            </motion.p>
+
+            {/* <motion.div className="flex flex-col sm:flex-row gap-4">
+              <motion.button 
+                className="border border-white px-8 py-3 rounded-full text-base hover:bg-white hover:text-black transition font-medium"
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+              >
+                Explore Space Topics
+              </motion.button>
+              
+              <motion.button 
+                className="border border-gray-600 px-8 py-3 rounded-full text-base text-gray-300 hover:bg-gray-800 hover:text-white transition font-medium"
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+              >
+                Latest Discoveries
+              </motion.button>
+            </motion.div> */}
+
+
+          </div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };

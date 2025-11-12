@@ -18,9 +18,9 @@ const PartnerLogos = () => {
 
   return (
     <div className="mt-10 relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <h3 className="text-2xl font-light leading-normal bg-gradient-to-t from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text text-center">
-          Partnering With
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-15">
+        <h3 className="text-4xl md:text-5xl leading-normal text-center font-light text-transparent bg-clip-text bg-gradient-to-t from-[#8C52FF] to-[#FF5757] mb-6">
+          In Collaboration With
         </h3>
 
         <motion.div
