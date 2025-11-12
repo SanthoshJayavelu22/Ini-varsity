@@ -6,29 +6,34 @@ import { Link } from "react-router-dom";
 const Curriculum = () => {
   const courses = [
     {
-      title: "Digital marketing",
+      title: "Product Design and Development Program",
       description:
-        "Students design and implement an omnichannel marketing plan for an eCommerce business.",
+        "This 22-days virtual bootcamp offers a hands-on journey into product design and development.",
+        status: "(Active)",
     },
     {
-      title: "Graphic Design",
+      title: "Fundamentals of Research and Academic Writings",
       description:
         "Learn to create visually appealing designs using typography, color, and layout techniques.",
+         status: "(Launching Soon…)",
     },
     {
-      title: "Web Development",
+      title: "Advance Space Research Program",
       description:
         "Build responsive and dynamic websites using HTML, CSS, JavaScript, and modern frameworks.",
+          status: "(Launching Soon…)",
     },
     {
-      title: "Data Analytics",
+      title: "Engines for Engineers",
       description:
         "Analyze data and interpret trends to help businesses make informed decisions.",
+          status: "(Launching Soon…)",
     },
     {
-      title: "UI/UX Design",
+      title: "Personal MBA Program",
       description:
         "Understand user experience principles and create intuitive, user-friendly designs.",
+          status: "(Launching Soon…)",
     },
   ];
 
@@ -88,7 +93,7 @@ const Curriculum = () => {
         >
           <motion.div variants={itemVariants}>
             <h2 className="text-4xl md:text-5xl font-light bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight">
-              Ini Varsity Curriculum
+              Advanced Program
             </h2>
           </motion.div>
 
@@ -97,20 +102,19 @@ const Curriculum = () => {
             variants={itemVariants}
           >
             <p>
-              Our ready-to-use, career-focused curriculum saves faculty time and
-              gives students hands-on, cross-disciplinary skill application—
-              across any course format.
+            Our career-focused Advanced Program is designed for pursuing graduates and professionals seeking to upskill in today’s rapidly evolving world. Through industry-aligned STEAM courses, learners gain practical expertise and digital fluency that prepare them for future-ready careers.
+
             </p>
             <p className="mt-3">
-              Didn’t find the topic you are teaching?{" "}
+             Didn’t find the topic you’re looking for?{" "}
               <motion.a
                 href="#"
                 className="underline text-gray-900 hover:text-gray-700 font-medium"
                 whileHover={{ x: 2 }}
                 transition={{ duration: 0.2 }}
               >
-                Please contact us
-              </motion.a>
+               Reach out to us
+              </motion.a> — we’ll help you explore customized learning opportunities.
             </p>
           </motion.div>
         </motion.div>
@@ -127,12 +131,13 @@ const Curriculum = () => {
               <div className="bg-white rounded-2xl p-10 h-70 md:h-50 flex flex-col md:flex-row md:items-center md:justify-between w-full">
                 {/* Left Text */}
                 <div className="mb-4 md:mb-0">
-                  <h3 className="text-2xl font-medium text-gray-900">
+                  <h3 className="text-2xl font-medium bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">
                     {course.title}
                   </h3>
                   <p className="text-gray-700 text-[14px] md:text-[16px] mt-1">
                     {course.description}
                   </p>
+                  <span className="text-md font-medium text-gray-900">{course.status}</span>
                 </div>
 
                 {/* Right Buttons */}

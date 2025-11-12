@@ -9,28 +9,35 @@ import { Download } from "lucide-react";
 const certifications = [
   {
     id: 1,
-    title: "Ini Foundation",
+    title: "3D Printing",
     description:
       "Our entry-level certification verifies students' essential digital skills and ability to build basic websites with Ini.",
     image: img1,
   },
   {
     id: 2,
-    title: "Ini Foundation",
+    title: "Unmanned Aerial Vehicle",
     description:
       "Our entry-level certification verifies students' essential digital skills and ability to build basic websites with Ini.",
     image: img1,
   },
   {
     id: 3,
-    title: "Ini Foundation",
+    title: "Deep Astronomy",
     description:
       "Our entry-level certification verifies students' essential digital skills and ability to build basic websites with Ini.",
     image: img1,
   },
   {
     id: 4,
-    title: "Ini Foundation",
+    title: "Rocket  Science",
+    description:
+      "Our entry-level certification verifies students' essential digital skills and ability to build basic websites with Ini.",
+    image: img1,
+  },
+    {
+    id: 5,
+    title: "Robotics",
     description:
       "Our entry-level certification verifies students' essential digital skills and ability to build basic websites with Ini.",
     image: img1,
@@ -133,13 +140,13 @@ export default function CertificationSection() {
         </motion.div>
 
         <motion.p 
-          className="text-gray-800 mb-6 font-medium"
+          className="text-gray-800 mb-6 font-medium text-2xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          Our Certification Pathways
+       Foundational Programs
         </motion.p>
 
         {/* Cards */}

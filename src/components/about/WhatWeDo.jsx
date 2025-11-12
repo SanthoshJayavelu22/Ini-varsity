@@ -5,6 +5,7 @@ import img1 from "../../assets/images/img-4.jpg";
 import img2 from "../../assets/images/img-2.png";
 import img3 from "../../assets/images/img-16.jpg";
 import shiva from "../../assets/images/shiva.jpg";
+import vijay from "../../assets/images/vijay.jpg";
 
 // FAQ Data + matching Unsplash images
 const faqs = [
@@ -59,8 +60,8 @@ const team = [
   },
   {
     name: "Vijay Viswanathan",
-    role: "Chief Marketing Officer",
-    img: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=400&q=80",
+    role: "Chief Marketing Officer (CMO)",
+    img: vijay,
   },
 ];
 

@@ -12,19 +12,19 @@ const TeachWithUs = () => {
 
   const accordionData = [
     {
-      title: "Curriculum Partnerships",
+      title: "Foundational Program",
       content:
-        "Our partnerships provide a full-suite of curriculum packages, learning resources, and 1:1 support, giving educators the tools they need to incorporate website creation across courses and disciplines.",
+        "The Foundational Program empowers young trailblazers to explore cutting-edge STEAM fields like 3D Printing, Aeromodelling, Deep Astronomy and Personal MBA  — building essential future skills and igniting career-ready curiosity.",
     },
     {
-      title: "Student certifications",
+      title: "Students Certifications",
       content:
-        "We empower students with professional-level certifications that validate their website creation and digital skills, helping them stand out in a competitive job market.",
+        "We equip students with globally recognized certifications that validate their STEAM skills and innovative thinking, setting them apart in the future workforce.",
     },
     {
       title: "Advanced Program",
       content:
-        "Our advanced tracks support experienced educators who want to integrate Ini deeper into their teaching through advanced projects and mentorship opportunities.",
+        "dvance your career with confidence — gain hands-on experience, master emerging technologies, and earn credentials that showcase your readiness for the global workforce.",
     },
   ];
 
@@ -90,7 +90,7 @@ const TeachWithUs = () => {
           className="text-4xl md:text-5xl font-light bg-linear-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight md:w-xl"
           variants={itemVariants}
         >
-          Teach future-ready digital skills with Ini Varsity.
+        Future-ready digital skills with ini
         </motion.h2>
 
         {/* Top Section - No gap between boxes */}
@@ -100,7 +100,7 @@ const TeachWithUs = () => {
             className="w-full lg:w-1/2 flex justify-center lg:justify-end lg:pr-0"
             variants={imageVariants}
           >
-            <div className="w-full max-w-[600px] h-[300px] md:h-[400px] rounded-r-none rounded-l-[40px] border-16 border-[#004a4a]">
+            <div className="w-full max-w-[600px] h-[300px] md:h-[450px] rounded-r-none rounded-l-[40px] border-16 border-[#004a4a]">
               <motion.img 
                 src={img1} 
                 className="w-full h-full rounded-l-[20px]"
