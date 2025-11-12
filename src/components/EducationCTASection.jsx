@@ -41,17 +41,7 @@ const EducationCTASection = () => {
           </span>
         </motion.h1>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-        >
-             <Link to="/contact">
-          <button className="px-8 py-4 rounded-full bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white text-lg font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105">
-            Get Started
-          </button></Link> 
-        </motion.div>
+  
       </div>
     </section>
   );
