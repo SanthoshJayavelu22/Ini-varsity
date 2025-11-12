@@ -54,7 +54,7 @@ const ContactUs = () => {
 
   return (
     <>
-      <section className="relative w-full bg-white text-gray-900 py-24 z-20 px-6 md:px-20 overflow-hidden rounded-b-[100px] shadow-[0_20px_40px_rgba(0,0,0,0.05)]">
+      <section className="relative w-full bg-white text-gray-900 py-35 z-20 px-6 md:px-20 overflow-hidden rounded-b-[100px] shadow-[0_20px_40px_rgba(0,0,0,0.05)]">
         <motion.div
           initial="hidden"
           whileInView="visible"
