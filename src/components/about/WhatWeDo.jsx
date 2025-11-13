@@ -7,46 +7,39 @@ import img3 from "../../assets/images/img-16.jpg";
 import shiva from "../../assets/images/shiva.jpg";
 import vijay from "../../assets/images/vijay.jpg";
 
-// FAQ Data + matching Unsplash images
+
 const faqs = [
   {
-    title: "Building Bright Futures through education & research.",
-    content:
-      "Empowering young minds with quality education and innovative research.",
+    title: "Interactive Learning",
+    content: "Empowering young minds with quality education and innovative research.",
     img: "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=900&q=80",
   },
   {
-    title: "Forums, webinars",
-    content:
-      "We organize interactive forums and webinars connecting educators, students, and innovators globally.",
-    img: img1,
-  },
-  {
     title: "Engage in research",
-    content:
-      "Collaborate with institutions and scholars to foster impactful research and academic excellence.",
-    img: img2,
+    content: "Collaborate with institutions and startups to foster impactful research and academic excellence.",
+    img: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=80",
   },
   {
-    title: "Publish scholarly",
-    content:
-      "Publish your ideas, research findings, and thought leadership through our knowledge-sharing platform.",
+    title: "Blogs/Insights",
+    content: "Discover thought-provoking blogs and insights — where ideas meet innovation, and learning transforms into inspiration.",
+    img: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    title: "Publish Scholarly",
+    content: "Share your research with the world — publish impactful, peer-reviewed scholarly works that contribute to global knowledge and inspire future innovations.",
     img: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80",
   },
   {
-    title: "Online Sales",
-    content:
-      "Access our educational materials, workshops, and online certification programs easily.",
-    img: img3,
+    title: "ilabs",
+    content: "Advanced research hub where educators and innovators come together to explore ideas, conduct experiments, and create breakthrough solutions that shape the future.",
+    img: "https://images.unsplash.com/photo-1568992688065-536aad8a12f6?auto=format&fit=crop&w=900&q=80",
   },
   {
-    title: "Event",
-    content:
-      "Participate in our national and international educational conferences, symposiums, and innovation expos.",
+    title: "Events",
+    content: "We organize interactive forums and webinars connecting educators, students, and innovators globally.",
     img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=80",
   },
 ];
-
 const team = [
   {
     name: "Shivaganesh Gunasekaran",

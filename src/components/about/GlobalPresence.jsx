@@ -35,20 +35,29 @@ const CountUp = ({ target, duration = 1500 }) => {
 };
 
 const GlobalPresence = () => {
-  const stats = [
-    {
-      number: "1k+",
-      text: "Annual events hosted worldwide—workshops, challenges, and showcases.",
-    },
-    {
-      number: "76+",
-      text: "Partner universities integrating our certification and tools into curricula.",
-    },
-    {
-      number: "17+",
-      text: "Countries represented across our growing academic network.",
-    },
-  ];
+const stats = [
+  {
+    number: "1500+",
+    title: "Students Trained",
+    text: "Building a global community of curious minds equipped with 21st-century skills.",
+  },
+  {
+    number: "25+",
+    title: "Research-Based Courses",
+    text: "Offering hands-on, inquiry-driven programs designed to inspire innovation.",
+  },
+  {
+    number: "18+",
+    title: "Partner Institutions",
+    text: "Collaborating with leading schools and universities to expand learning impact.",
+  },
+  {
+    number: "12+",
+    title: "International Collaborations",
+    text: "Connecting globally to exchange knowledge and foster cross-cultural research.",
+  },
+];
+
 
   return (
     <section className="w-full bg-white py-8 pb-20 relative">
@@ -75,10 +84,9 @@ const GlobalPresence = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-gray-700 mt-3 max-w-2xl"
+            className="text-gray-700 mt-3"
           >
-            Our passionate, curious team drives everything we do shaping
-            meaningful learning experiences, one idea at a time.
+          Empowering learners worldwide through innovation and research-driven education. We have trained 1500+ students across the globe, delivering impactful learning experiences that inspire growth and creativity.
           </motion.p>
         </motion.div>
 
@@ -87,38 +95,40 @@ const GlobalPresence = () => {
           {/* Left Stats */}
           <div className="space-y-10">
             {stats.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.2 }}
-                whileHover={{
-                  x: 10,
-                  transition: { duration: 0.3 },
-                }}
-                className="cursor-pointer"
-              >
-                <motion.h3
-                  className="text-4xl md:text-5xl font-extrabold text-gray-900"
-                  whileHover={{
-                    scale: 1.1,
-                    background: "linear-gradient(135deg, #8C52FF, #FF5757)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <CountUp target={stat.number} />
-                </motion.h3>
-                <motion.p
-                  className="text-gray-700 max-w-xs"
-                  whileHover={{ color: "#8C52FF" }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {stat.text}
-                </motion.p>
-              </motion.div>
+            <motion.div
+  key={i}
+  initial={{ opacity: 0, x: -30 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, delay: i * 0.2 }}
+  whileHover={{ x: 10, transition: { duration: 0.3 } }}
+  className="cursor-pointer"
+>
+  <motion.h3
+    className="text-3xl md:text-4xl font-extrabold text-gray-900 flex items-center gap-2 flex-wrap"
+    whileHover={{
+      scale: 1.05,
+      background: "linear-gradient(135deg, #8C52FF, #FF5757)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+    }}
+    transition={{ duration: 0.3 }}
+  >
+    <CountUp target={stat.number} />{" "}
+    <span className="font-semibold text-gray-800 text-xl">
+      {stat.title}
+    </span>
+  </motion.h3>
+
+  <motion.p
+    className="text-gray-700  mt-1"
+    whileHover={{ color: "#8C52FF" }}
+    transition={{ duration: 0.2 }}
+  >
+    {stat.text}
+  </motion.p>
+</motion.div>
+
             ))}
           </div>
 

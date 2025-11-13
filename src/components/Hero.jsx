@@ -85,8 +85,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-6 text-lg text-black"
         >
-          From timeless classics to fresh new releases — explore stories that
-          inspire, entertain, and stay with you.
+         From creative experiments to groundbreaking innovations — explore ideas that inspire curiosity, spark imagination, and shape the future through STEAM learning.
         </motion.p>
 
         <motion.div
