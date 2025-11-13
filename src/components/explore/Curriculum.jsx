@@ -128,7 +128,7 @@ const Curriculum = () => {
               variants={courseCardVariants}
               whileHover="hover"
             >
-              <div className="bg-white rounded-2xl p-10 h-70 md:h-50 flex flex-col md:flex-row md:items-center md:justify-between w-full">
+              <div className="bg-white rounded-2xl p-5 md:p-10 h-80 md:h-50 flex flex-col md:flex-row md:items-center md:justify-between w-full">
                 {/* Left Text */}
                 <div className="mb-4 md:mb-0">
                   <h3 className="text-2xl font-medium bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">

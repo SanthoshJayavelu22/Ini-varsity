@@ -51,15 +51,15 @@ const Header = () => {
             to="/contact"
             className={`hover:text-black ${isActive("/contact") ? "text-black font-bold" : ""}`}
           >
-            Contact Us
+           Careers 
           </Link>
         </nav>
 
-        {/* ✅ Right Side - Get Started linked to /contact */}
+     
         <div className="hidden md:flex items-center gap-6">
           <Link to="/contact" onClick={handleLinkClick}>
             <button className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white font-medium px-5 py-2 rounded-full hover:opacity-90 transition">
-              Get Started
+           Contact Us
             </button>
           </Link>
         </div>
@@ -106,13 +106,13 @@ const Header = () => {
             onClick={handleLinkClick}
             className={`block ${isActive("/contact") ? "text-black font-bold" : "text-gray-600"}`}
           >
-            Contact Us
+            Careers
           </Link>
 
        
           <Link to="/contact" onClick={handleLinkClick}>
             <button className="w-full bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white py-2 rounded-full hover:opacity-90 transition">
-              Get Started
+           Contact Us
             </button>
           </Link>
         </div>

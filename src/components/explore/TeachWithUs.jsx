@@ -90,7 +90,7 @@ const TeachWithUs = () => {
           className="text-4xl md:text-5xl font-light bg-linear-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight md:w-xl"
           variants={itemVariants}
         >
-        Future-ready digital skills with ini
+      Building the future with young minds
         </motion.h2>
 
         {/* Top Section - No gap between boxes */}

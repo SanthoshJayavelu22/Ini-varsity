@@ -81,7 +81,7 @@ const CampusToClient = () => {
             variants={itemVariants}
           >
             <h2 className="text-4xl md:text-5xl font-light bg-linear-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text mb-6 leading-tight">
-            Building the future with young minds
+          Smart Incubation Partnership Program
             </h2>
             <p className="text-gray-700 text-[15px] leading-relaxed text-justify mb-6">
               The Smart Incubation Partnership (SIP) Program aims to empower

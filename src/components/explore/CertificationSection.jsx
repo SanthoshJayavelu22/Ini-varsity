@@ -165,7 +165,7 @@ export default function CertificationSection() {
               whileHover="hover"
             >
               {/* Left side */}
-              <div className="flex items-center gap-4 w-full md:w-1/2">
+              <div className="flex items-center gap-4 w-full md:w-1/2 ">
                 {/* <motion.img
                   src={cert.image}
                   alt={cert.title}
@@ -179,8 +179,8 @@ export default function CertificationSection() {
               </div>
 
               {/* Right side */}
-              <div className="w-full md:w-1/2 mt-4 md:mt-0">
-                <p className="text-gray-700 text-sm mt-3">
+              <div className="w-full md:w-1/2">
+                <p className="text-gray-700 text-sm mt-3 mb-5 md:mb-0">
                   {cert.description}
                 </p>
                 <div className="flex gap-3 md:justify-end flex-wrap">

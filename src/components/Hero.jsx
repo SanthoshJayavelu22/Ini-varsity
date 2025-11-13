@@ -95,26 +95,7 @@ const Hero = () => {
           className="mt-10"
         >
      
-          <Link to="/contact">
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(140, 82, 255, 0.3)",
-              }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white px-10 py-3 rounded-full text-lg font-medium shadow-md hover:shadow-lg transition-all duration-300"
-            >
-              <motion.span
-                animate={{
-                  scale: [1, 1.02, 1],
-                  transition: { duration: 2, repeat: Infinity, repeatDelay: 3 },
-                }}
-              >
-                Get Started
-              </motion.span>
-            </motion.button>
-          </Link>
+
         </motion.div>
       </div>
     </section>

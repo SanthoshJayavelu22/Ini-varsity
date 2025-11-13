@@ -110,20 +110,33 @@ const FeaturedSection = () => {
               uncover the mysteries of the cosmos.
             </motion.p>
 
-            <motion.p 
-              className="text-gray-300 mb-8 text-sm"
-              variants={itemVariants}
-            >
-              Featured resource:{" "}
-              <a 
-                href="https://www.icosmopedia.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-white hover:text-blue-400 underline transition-colors duration-300"
-              >
-                www.icosmopedia.com
-              </a>
-            </motion.p>
+     
+
+                      <a 
+  href="https://www.icosmopedia.com" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  <motion.button
+    whileHover={{
+      scale: 1.05,
+      boxShadow: "0 20px 40px rgba(140, 82, 255, 0.3)",
+    }}
+    whileTap={{ scale: 0.95 }}
+    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+    className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white px-10 py-3 rounded-full text-lg font-medium shadow-md hover:shadow-lg transition-all duration-300"
+  >
+    <motion.span
+      animate={{
+        scale: [1, 1.02, 1],
+        transition: { duration: 2, repeat: Infinity, repeatDelay: 3 },
+      }}
+    >
+     icosmopedia
+    </motion.span>
+  </motion.button>
+</a>
+
 
             {/* <motion.div className="flex flex-col sm:flex-row gap-4">
               <motion.button 

@@ -71,16 +71,7 @@ const Hero = () => {
 
         </motion.p>
 
-        {/* Gradient Button */}
-         <Link to="/contact">
-        <motion.button
-          className="mt-8 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white font-medium px-8 py-3 rounded-full hover:opacity-90 transition"
-          variants={fadeInUp}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Get Started
-        </motion.button></Link>  
+ 
       </motion.div>
 
       {/* Top Scrolling Row */}
