@@ -143,7 +143,7 @@ const CoursePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white mt-20">
+    <div className="min-h-screen bg-white mt-10 md:mt-20">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#8C52FF]/10 via-white to-[#FF5757]/10 pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -227,7 +227,7 @@ const CoursePage = () => {
               <motion.img
                 src={courseHero}
                 alt="Course Hero"
-                className="w-full h-auto object-cover rounded-3xl shadow-xl"
+                className="w-[350px] md:w-full h-[500px] md:h-[750px]  rounded-3xl shadow-xl"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               />
