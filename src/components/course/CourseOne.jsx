@@ -52,7 +52,7 @@ const CoursePage = () => {
     description: "Transform your ideas into market-ready products through our intensive 22-day bootcamp. Master design thinking, advanced fabrication, and AI-powered research methodologies.",
     duration: "22 days",
     schedule: "07 PM Onwards",
-    language: "English + Hindi",
+    language: "Tamil & English",
     price: "INR 12,000",
     slots: "20-30 Max/Batch",
     mode: "Online (Microsoft Teams)",
