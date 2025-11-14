@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import img1 from "../assets/images/img-4.jpg";
 import img2 from "../assets/images/img-15.jpg";
@@ -8,6 +8,7 @@ import img4 from "../assets/images/img-17.jpg";
 import img5 from "../assets/images/img-2.png";
 import img6 from "../assets/images/img-13.jpg";
 import img7 from "../assets/images/img-14.jpg";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const classCards = [
   { title: "CLASS 01", color: "#D6EADF", img: img1, slug: "class-01" },
@@ -51,9 +52,38 @@ const cardHoverVariants = {
 
 const EducationSection = () => {
   const sectionRef = useRef(null);
+  const scrollContainerRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-50px", amount: 0.3 });
   const [paused, setPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Detect screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Navigation functions for mobile
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === classCards.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? classCards.length - 1 : prevIndex - 1
+    );
+  };
+
+  // Auto-scroll for desktop only
   const infiniteClassCards = [...classCards, ...classCards, ...classCards];
 
   return (
@@ -107,55 +137,138 @@ const EducationSection = () => {
           </motion.div>
         </div>
 
-        {/* Infinite Auto Scroll (Pauses on Hover) */}
-        <div
-          className="relative overflow-hidden"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-        >
-          <motion.div
-            className="flex gap-6 py-4"
-            animate={!paused ? { x: ["0%", "-50%"] } : { x: null }}
-            transition={{
-              ease: "linear",
-              duration: 40,
-              repeat: Infinity,
-            }}
+        {/* Desktop: Infinite Auto Scroll */}
+        {!isMobile && (
+          <div
+            className="relative overflow-hidden hidden md:block"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
           >
-            {infiniteClassCards.map((card, i) => (
-              <motion.div
-                key={`${card.slug}-${i}`}
-                className="flex-shrink-0 w-80 md:w-96"
-                whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.3 } }}
-              >
-                <Link to="/course" className="block">
-                  <div className="rounded-3xl overflow-hidden h-64 relative group cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300">
-                    <img
-                      src={card.img}
-                      alt={card.title}
-                      className="absolute inset-0 w-full h-full object-cover brightness-90 group-hover:brightness-75 transition-all duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-500" />
-                    <div className="absolute bottom-4 left-4 text-white z-10">
-                      <h3 className="text-lg sm:text-xl font-semibold mb-1">{card.title}</h3>
-                      <p className="text-sm opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-                        Ini sites are designed to ensure fast loading times.
-                      </p>
-                    </div>
-                    {/* <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="bg-black/50 rounded-full px-6 py-3 text-white font-medium backdrop-blur-sm">
-                        View Course Details →
+            <motion.div
+              className="flex gap-6 py-4"
+              animate={!paused ? { x: ["0%", "-50%"] } : { x: null }}
+              transition={{
+                ease: "linear",
+                duration: 40,
+                repeat: Infinity,
+              }}
+            >
+              {infiniteClassCards.map((card, i) => (
+                <motion.div
+                  key={`${card.slug}-${i}`}
+                  className="flex-shrink-0 w-80 md:w-96"
+                  whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.3 } }}
+                >
+                  <Link to="/course" className="block">
+                    <div className="rounded-3xl overflow-hidden h-64 relative group cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300">
+                      <img
+                        src={card.img}
+                        alt={card.title}
+                        className="absolute inset-0 w-full h-full object-cover brightness-90 group-hover:brightness-75 transition-all duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-500" />
+                      <div className="absolute bottom-4 left-4 text-white z-10">
+                        <h3 className="text-lg sm:text-xl font-semibold mb-1">{card.title}</h3>
+                        <p className="text-sm opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                          Ini sites are designed to ensure fast loading times.
+                        </p>
                       </div>
-                    </div> */}
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        )}
+
+        {/* Mobile: Carousel with Navigation */}
+        {isMobile && (
+          <div className="relative md:hidden px-4">
+            {/* Carousel Container */}
+            <div className="relative overflow-hidden rounded-3xl">
+              <motion.div
+                className="flex"
+                animate={{ x: `-${currentIndex * 100}%` }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              >
+                {classCards.map((card, index) => (
+                  <div
+                    key={card.slug}
+                    className="w-full flex-shrink-0 px-2"
+                  >
+                    <motion.div
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Link to="/course" className="block">
+                        <div className="rounded-3xl overflow-hidden h-64 relative group cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300">
+                          <img
+                            src={card.img}
+                            alt={card.title}
+                            className="absolute inset-0 w-full h-full object-cover brightness-90 group-hover:brightness-75 transition-all duration-500 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-500" />
+                          <div className="absolute bottom-4 left-4 text-white z-10">
+                            <h3 className="text-lg sm:text-xl font-semibold mb-1">{card.title}</h3>
+                            <p className="text-sm opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                              Ini sites are designed to ensure fast loading times.
+                            </p>
+                          </div>
+                        </div>
+                      </Link>
+                    </motion.div>
                   </div>
-                </Link>
+                ))}
               </motion.div>
-            ))}
-          </motion.div>
-        </div>
+            </div>
+
+            {/* Navigation Buttons */}
+            <div className="flex justify-center items-center gap-4 mt-6">
+              <motion.button
+                onClick={prevSlide}
+                whileHover={{ scale: 1.1, backgroundColor: "#8C52FF" }}
+                whileTap={{ scale: 0.9 }}
+                className="p-3 rounded-full bg-gray-800 text-white shadow-lg hover:shadow-xl transition-all"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </motion.button>
+
+              {/* Dots Indicator */}
+              <div className="flex gap-2">
+                {classCards.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentIndex 
+                        ? "bg-gradient-to-r from-[#8C52FF] to-[#FF5757] w-6" 
+                        : "bg-gray-300"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <motion.button
+                onClick={nextSlide}
+                whileHover={{ scale: 1.1, backgroundColor: "#FF5757" }}
+                whileTap={{ scale: 0.9 }}
+                className="p-3 rounded-full bg-gray-800 text-white shadow-lg hover:shadow-xl transition-all"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </motion.button>
+            </div>
+
+            {/* Mobile Indicator Text */}
+            <div className="text-center mt-4">
+              <p className="text-sm text-gray-600">
+                {currentIndex + 1} / {classCards.length}
+              </p>
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* ✨ BLOG SECTION */}
+      {/* BLOG SECTION */}
       <div className="max-w-7xl mx-auto text-center relative z-10 px-4 sm:px-6 md:px-12">
         <motion.div
           variants={containerVariants}
@@ -177,18 +290,18 @@ const EducationSection = () => {
                 boxShadow: "0 15px 35px rgba(140, 82, 255, 0.25)",
               }}
               whileTap={{ scale: 0.95 }}
-              transition={{ 
-                type: "spring", 
-                stiffness: 400, 
-                damping: 15 
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 15
               }}
               className="px-6 py-2 text-white rounded-full bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-sm sm:text-base mb-12 hover:opacity-90 transition-all"
             >
               <motion.span
                 animate={{ x: [0, 4, 0] }}
-                transition={{ 
-                  duration: 2.5, 
-                  repeat: Infinity, 
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
                   repeatDelay: 1.5,
                   ease: "easeInOut"
                 }}
@@ -200,7 +313,7 @@ const EducationSection = () => {
         </motion.div>
 
         {/* Blog Cards */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
@@ -223,12 +336,12 @@ const EducationSection = () => {
                     src={card.img}
                     alt={card.title}
                     className="w-full h-full object-cover"
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.1,
                       transition: { duration: 0.6, ease: "easeOut" }
                     }}
                   />
-                  <motion.div 
+                  <motion.div
                     className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60"
                     whileHover={{ opacity: 0.8 }}
                     transition={{ duration: 0.3 }}
@@ -238,7 +351,7 @@ const EducationSection = () => {
                 <div className="p-5 flex justify-between items-center relative">
                   <motion.p
                     className="text-sm sm:text-base font-medium text-left pr-4"
-                    whileHover={{ 
+                    whileHover={{
                       color: "#8C52FF",
                       x: 3
                     }}
@@ -253,10 +366,10 @@ const EducationSection = () => {
                       backgroundColor: "#8C52FF",
                     }}
                     whileTap={{ scale: 0.9 }}
-                    transition={{ 
-                      type: "spring", 
-                      stiffness: 500, 
-                      damping: 15 
+                    transition={{
+                      type: "spring",
+                      stiffness: 500,
+                      damping: 15
                     }}
                     className="bg-black text-white rounded-full p-2 hover:opacity-80 transition-all group"
                   >
@@ -303,7 +416,7 @@ const EducationSection = () => {
         </motion.div>
       </div>
 
-      {/* Smooth fade-out gradient at bottom */}
+      {/* Smooth fade-out gradient */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
     </motion.section>
   );

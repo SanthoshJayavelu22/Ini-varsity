@@ -8,32 +8,32 @@ const Curriculum = () => {
     {
       title: "Product Design and Development Program",
       description:
-        "This 22-days virtual bootcamp offers a hands-on journey into product design and development.",
-        status: "(Active)",
+        "This 22-days virtual bootcamp offers a hands-on journey into product design and development."
+       
     },
     {
       title: "Fundamentals of Research and Academic Writings",
       description:
-        "Learn to create visually appealing designs using typography, color, and layout techniques.",
-         status: "(Launching Soon…)",
+        "Learn to create visually appealing designs using typography, color, and layout techniques."
+        
     },
     {
       title: "Advance Space Research Program",
       description:
-        "Build responsive and dynamic websites using HTML, CSS, JavaScript, and modern frameworks.",
-          status: "(Launching Soon…)",
+        "Build responsive and dynamic websites using HTML, CSS, JavaScript, and modern frameworks."
+         
     },
     {
       title: "Engines for Engineers",
       description:
-        "Analyze data and interpret trends to help businesses make informed decisions.",
-          status: "(Launching Soon…)",
+        "Analyze data and interpret trends to help businesses make informed decisions."
+       
     },
     {
       title: "Personal MBA Program",
       description:
-        "Understand user experience principles and create intuitive, user-friendly designs.",
-          status: "(Launching Soon…)",
+        "Understand user experience principles and create intuitive, user-friendly designs."
+       
     },
   ];
 
@@ -140,34 +140,50 @@ const Curriculum = () => {
                   <span className="text-md font-medium text-gray-900">{course.status}</span>
                 </div>
 
-                {/* Right Buttons */}
-                <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
-                    <Link to="/course"> <motion.button
-                    className="border border-gray-300 text-md font-medium px-6 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2"
-                    variants={buttonVariants}
-                    whileHover="hover"
-                    whileTap="tap"
-                  >
-               
-                Enroll Now
-                  </motion.button>  </Link>
-  
-                    <motion.button
-                      className="text-md font-medium underline text-gray-900 hover:text-gray-700 flex items-center gap-1"
-                      variants={buttonVariants}
-                      whileHover="hover"
-                      whileTap="tap"
-                    >
-                      Curriculum
-                      <motion.span
-                        whileHover={{ x: 3 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <Download className="w-4 h-4" /> {/* ✅ Changed here too */}
-                      </motion.span>
-                    </motion.button>
-                
-                </div>
+             {/* Right Buttons */}
+<div className="flex flex-col md:flex-row items-start md:items-center gap-3">
+
+  {index === 0 ? (
+    <Link to="/course">
+      <motion.button
+        className="border border-gray-300 text-md font-medium px-6 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2"
+        variants={buttonVariants}
+        whileHover="hover"
+        whileTap="tap"
+      >
+        Enroll Now
+      </motion.button>
+    </Link>
+  ) : (
+ 
+    <motion.button
+      disabled
+      className="border border-gray-200 text-md font-medium px-6 py-4 rounded-full bg-gray-100 text-gray-400 cursor-not-allowed flex items-center gap-2"
+    >
+      Launching Soon...
+    </motion.button>
+  )}
+
+  {/* Curriculum Button (Download) */}
+  <motion.button
+    disabled={index !== 0} // Disable for other 4 courses
+    className={`text-md font-medium underline flex items-center gap-1 ${
+      index === 0
+        ? "text-gray-900 hover:text-gray-700"
+        : "text-gray-400 cursor-not-allowed"
+    }`}
+    variants={buttonVariants}
+    whileHover={index === 0 ? "hover" : ""}
+    whileTap={index === 0 ? "tap" : ""}
+  >
+    Curriculum
+    <motion.span whileHover={index === 0 ? { x: 3 } : {}}>
+      <Download className="w-4 h-4" />
+    </motion.span>
+  </motion.button>
+
+</div>
+
               </div>
             </motion.div>
           ))}

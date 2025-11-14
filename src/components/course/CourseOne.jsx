@@ -142,6 +142,44 @@ const CoursePage = () => {
     setActiveModule(index);
   };
 
+  const nextBatchDate = "2025-11-25T19:00:00";  // <--- CHANGE DATE HERE
+
+const useCountdown = (targetDate) => {
+  const countDownDate = new Date(targetDate).getTime();
+
+  const [countDown, setCountDown] = React.useState(
+    countDownDate - new Date().getTime()
+  );
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCountDown(countDownDate - new Date().getTime());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [countDownDate]);
+
+  return getReturnValues(countDown);
+};
+
+const getReturnValues = (countDown) => {
+  if (countDown <= 0) {
+    return ["0", "0", "0", "0"];
+  }
+
+  const days = Math.floor(countDown / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((countDown % (1000 * 60)) / 1000);
+
+  return [days, hours, minutes, seconds];
+};
+
+const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
+
+
   return (
     <div className="min-h-screen bg-white mt-10 md:mt-20">
       {/* Hero Section */}
@@ -155,12 +193,7 @@ const CoursePage = () => {
           >
             {/* Left Content */}
             <motion.div variants={fadeInUp}>
-              <motion.span 
-                className="inline-block px-4 py-1 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white text-sm rounded-full mb-6"
-                variants={fadeInUp}
-              >
-                {courseData.status}
-              </motion.span>
+            
               
               <motion.h1 
                 className="text-4xl md:text-6xl font-light leading-tight mb-6"
@@ -214,7 +247,7 @@ const CoursePage = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Download Curriculum
+                 Watch Preview
                 </motion.button>
               </motion.div>
             </motion.div>
@@ -260,21 +293,31 @@ const CoursePage = () => {
               </span>
             </motion.h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {courseData.highlights.map((highlight, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
-                  variants={fadeInUp}
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-lg flex items-center justify-center mb-4">
-                    <ChevronRight className="w-6 h-6 text-white" />
-                  </div>
-                  <p className="text-gray-700 leading-relaxed">{highlight}</p>
-                </motion.div>
-              ))}
-            </div>
+<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+  {courseData.highlights.map((highlight, index) => (
+    <motion.div
+      key={index}
+      className="p-[2px] rounded-2xl bg-gradient-to-r from-[#8C52FF] to-[#FF5757]"
+      variants={fadeInUp}
+      whileHover={{ y: -5 }}
+    >
+      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+        
+        {/* Number Badge */}
+        <div className="w-12 h-12 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-lg flex items-center justify-center mb-4">
+          <span className="text-white text-xl font-semibold">{index + 1}</span>
+        </div>
+
+        {/* Text */}
+        <p className="text-gray-700 leading-relaxed flex-grow">
+          {highlight}
+        </p>
+      </div>
+    </motion.div>
+  ))}
+</div>
+
+
           </motion.div>
         </div>
       </section>
@@ -431,32 +474,41 @@ const CoursePage = () => {
               </span>
             </motion.h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {courseData.benefits.map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  className="group p-6 rounded-2xl border border-gray-200 hover:border-transparent bg-gradient-to-br from-white to-gray-50 hover:from-[#8C52FF]/5 hover:to-[#FF5757]/5 transition-all duration-300"
-                  variants={fadeInUp}
-                  whileHover={{ 
-                    y: -5,
-                    scale: 1.02
-                  }}
-                >
-                  <motion.div
-                    className="w-12 h-12 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                    whileHover={{ rotate: 5 }}
-                  >
-                    {benefit.icon}
-                  </motion.div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {benefit.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
+           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {courseData.benefits.map((benefit, index) => (
+    
+    <motion.div
+      key={index}
+      className="p-[2px] rounded-2xl bg-gradient-to-r from-[#8C52FF] to-[#FF5757]"
+      variants={fadeInUp}
+      whileHover={{ y: -5, scale: 1.02 }}
+    >
+      <div className="bg-white rounded-2xl p-6 h-full transition-all duration-300 shadow-sm hover:shadow-md">
+        
+        {/* Icon */}
+        <motion.div
+          className="w-12 h-12 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-lg flex items-center justify-center mb-4"
+          whileHover={{ rotate: 5, scale: 1.1 }}
+        >
+          {benefit.icon}
+        </motion.div>
+
+        {/* Title */}
+        <h3 className="text-lg font-semibold text-gray-900 mb-2">
+          {benefit.title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-gray-600 text-sm leading-relaxed">
+          {benefit.description}
+        </p>
+
+      </div>
+    </motion.div>
+
+  ))}
+</div>
+
           </motion.div>
         </div>
       </section>
@@ -532,22 +584,57 @@ const CoursePage = () => {
                 </div>
               </motion.div>
 
-              {/* Final CTA */}
-              <motion.div
-                className="mt-8 text-center"
-                variants={fadeInUp}
-              >
-                <motion.button
-                  className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white font-medium px-12 py-4 rounded-full hover:opacity-90 transition text-lg"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Enroll in Program - {courseData.price}
-                </motion.button>
-                <p className="text-gray-600 mt-4 text-sm">
-                  Limited to {courseData.slots} participants per batch
-                </p>
-              </motion.div>
+           {/* Final CTA */}
+<motion.div className="mt-8 text-center" variants={fadeInUp}>
+
+  {/* Countdown Timer Box */}
+  <div className="mb-6 inline-block px-6 py-4 bg-gradient-to-r from-[#8C52FF]/10 to-[#FF5757]/10 rounded-2xl shadow-inner">
+    <h4 className="text-lg font-semibold text-gray-800 mb-2">
+      Next Batch Starts On:
+    </h4>
+
+ <p className="text-[#8C52FF] font-medium mb-3">
+  {new Date(nextBatchDate).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric"
+  })}
+  {" — "}
+  {new Date(nextBatchDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+</p>
+
+
+    {/* Live Countdown */}
+    <div className="flex justify-center gap-4 text-center">
+      {[
+        { label: "Days", value: days },
+        { label: "Hours", value: hours },
+        { label: "Minutes", value: minutes },
+        { label: "Seconds", value: seconds },
+      ].map((item, index) => (
+        <div key={index} className="w-20">
+          <p className="text-2xl font-bold bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent">
+            {item.value}
+          </p>
+          <span className="text-gray-600 text-sm">{item.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <motion.button
+    className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white font-medium px-12 py-4 rounded-full hover:opacity-90 transition text-lg"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    Enroll in Program - {courseData.price}
+  </motion.button>
+
+  <p className="text-gray-600 mt-4 text-sm">
+    Limited to {courseData.slots} participants per batch
+  </p>
+</motion.div>
+
             </motion.div>
           </div>
         </div>

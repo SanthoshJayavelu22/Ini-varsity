@@ -170,90 +170,87 @@ const ConferenceSection = () => {
    
       </div>
 
-      {/* ✅ Full Width YouTube Video Section */}
+    {/* 🎥 Video Section (max-w-7xl, NOT full width) */}
+<motion.div
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+  viewport={{ once: true }}
+  className="w-full mt-10 md:mt-16 relative z-10"
+>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+
+    {/* Video Container */}
+    <motion.div
+      className="relative w-full h-0 pb-[56.25%] bg-black rounded-2xl overflow-hidden"
+      whileInView={{ 
+        scale: [0.95, 1],
+        transition: { duration: 1, ease: "easeOut" }
+      }}
+    >
+    <iframe
+  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ&controls=0&showinfo=0&modestbranding=1&rel=0"
+  className="absolute top-0 left-0 w-full h-full rounded-2xl"
+  frameBorder="0"
+  allow="autoplay; encrypted-media"
+  allowFullScreen
+  title="Conference Highlights"
+/>
+
+
+      {/* Animated gradient overlay */}
       <motion.div
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
-        className="w-full mt-10 md:mt-16 relative z-10"
+        className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent opacity-0"
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.3 }}
+      />
+    </motion.div>
+
+    {/* ▶ Play Button Over Video — opens YouTube in new tab  */}
+    <motion.div
+      className="absolute inset-0 flex items-center justify-center cursor-pointer"
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6, delay: 0.6 }}
+    >
+      <motion.div
+        onClick={() => window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank")}
+        className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-full border-4 border-white text-white hover:scale-110 transition cursor-pointer bg-black/40 backdrop-blur-sm"
+        animate={{
+          scale: [1, 1.1, 1],
+          boxShadow: [
+            "0 0 0 0 rgba(255, 255, 255, 0.3)",
+            "0 0 0 10px rgba(255, 255, 255, 0)",
+            "0 0 0 0 rgba(255, 255, 255, 0)"
+          ]
+        }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
       >
-        {/* Full-width video trick */}
-        <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-          {/* 16:9 Video container */}
-          <motion.div
-            className="relative w-full h-0 pb-[56.25%] bg-black overflow-hidden"
-            whileInView={{ 
-              scale: [0.95, 1],
-              transition: { duration: 1, ease: "easeOut" }
-            }}
-          >
-            <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ&controls=0&modestbranding=1&rel=0"
-              className="absolute top-0 left-0 w-full h-full"
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              title="Conference Highlights"
-            />
-            
-            {/* Animated gradient overlay */}
-            <motion.div
-              className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0"
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            />
-          </motion.div>
-
-          {/* Overlay Play Button (Optional) */}
-          <motion.div
-            className="absolute inset-0 flex items-center justify-center pointer-events-none"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <div className="bg-black/30 rounded-full p-3 sm:p-4 backdrop-blur-sm">
-              <motion.div
-                className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full border-4 border-white text-white"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  boxShadow: [
-                    "0 0 0 0 rgba(255, 255, 255, 0.4)",
-                    "0 0 0 10px rgba(255, 255, 255, 0)",
-                    "0 0 0 0 rgba(255, 255, 255, 0)"
-                  ]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeOut"
-                }}
-              >
-                <svg
-                  className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 ml-1"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Description below video */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center mt-6 px-4 sm:px-8"
+        <svg
+          className="w-6 h-6 sm:w-8 sm:h-8 ml-1"
+          fill="currentColor"
+          viewBox="0 0 24 24"
         >
-          <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            Watch the highlights from our previous conference and see what makes
-            our events unforgettable.
-          </p>
-        </motion.div>
+          <path d="M8 5v14l11-7z" />
+        </svg>
       </motion.div>
+    </motion.div>
+
+    {/* Description below video */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.6 }}
+      className="text-center mt-6 px-4 sm:px-8"
+    >
+      <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+        Watch the highlights from our previous conference and see what makes our events unforgettable.
+      </p>
+    </motion.div>
+
+  </div>
+</motion.div>
+
     </section>
   );
 };
