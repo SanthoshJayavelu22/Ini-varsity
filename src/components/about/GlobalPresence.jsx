@@ -99,7 +99,7 @@ const GlobalPresence = () => {
             loop
             playsInline
           >
-            <source src="/src/assets/images/map animate.mp4" type="video/mp4" />
+            <source src="/videos/map animate.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </motion.div>
