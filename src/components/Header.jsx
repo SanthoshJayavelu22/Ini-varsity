@@ -7,9 +7,21 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
-  const handleLinkClick = () => setOpen(false); // closes mobile menu on link click
+  const handleLinkClick = () => setOpen(false);
 
   const isActive = (path) => location.pathname === path;
+
+  const handleCareerClick = () => {
+    setOpen(false);
+    // Navigate to contact page with careers hash
+    window.location.href = '/contact#careers';
+  };
+
+  const handleContactClick = () => {
+    setOpen(false);
+    // Navigate to contact page with contact hash
+    window.location.href = '/contact';
+  };
 
   return (
     <header className="w-full fixed top-0 left-0 bg-white z-50 shadow-sm">
@@ -47,21 +59,18 @@ const Header = () => {
           >
             Blogs
           </Link>
-          <Link
-            to="/contact"
-            className={`hover:text-black ${isActive("/contact") ? "text-black font-bold" : ""}`}
+          <button
+            onClick={handleCareerClick}
+            className={`hover:text-black ${location.pathname === "/contact" ? "text-black font-bold" : ""}`}
           >
-           Careers 
-          </Link>
+            Careers
+          </button>
         </nav>
 
-     
         <div className="hidden md:flex items-center gap-6">
-          <Link to="/contact" onClick={handleLinkClick}>
-            <button className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white font-medium px-5 py-2 rounded-full hover:opacity-90 transition">
-           Contact Us
-            </button>
-          </Link>
+          <button onClick={handleContactClick} className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white font-medium px-5 py-2 rounded-full hover:opacity-90 transition">
+            Contact Us
+          </button>
         </div>
 
         {/* Mobile Menu Icon */}
@@ -101,20 +110,16 @@ const Header = () => {
           >
             Blogs
           </Link>
-          <Link
-            to="/contact"
-            onClick={handleLinkClick}
-            className={`block ${isActive("/contact") ? "text-black font-bold" : "text-gray-600"}`}
+          <button
+            onClick={handleCareerClick}
+            className={`block w-full text-left ${location.pathname === "/contact" ? "text-black font-bold" : "text-gray-600"}`}
           >
             Careers
-          </Link>
+          </button>
 
-       
-          <Link to="/contact" onClick={handleLinkClick}>
-            <button className="w-full bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white py-2 rounded-full hover:opacity-90 transition">
-           Contact Us
-            </button>
-          </Link>
+          <button onClick={handleContactClick} className="w-full bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white py-2 rounded-full hover:opacity-90 transition">
+            Contact Us
+          </button>
         </div>
       )}
     </header>

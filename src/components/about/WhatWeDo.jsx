@@ -6,6 +6,7 @@ import img2 from "../../assets/images/img-2.png";
 import img3 from "../../assets/images/img-16.jpg";
 import shiva from "../../assets/images/shiva.jpg";
 import vijay from "../../assets/images/vijay.jpg";
+import surendhar from "../../assets/images/Surendhar Ganesh.jpg";
 
 
 const faqs = [
@@ -48,8 +49,8 @@ const team = [
   },
   {
     name: "Surendhar Ganesh",
-    role: "Co Founder & COO",
-    img: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=400&q=80",
+    role: "Co Founder",
+    img: surendhar,
   },
   {
     name: "Vijay Viswanathan",
