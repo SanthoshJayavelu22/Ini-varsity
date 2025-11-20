@@ -10,8 +10,9 @@ import Blogs from "./pages/Blogs";
 import ContactUs from "./pages/ContactUs";
 import ScrollToTop from "./components/ScrollToTop";
 import BlogArticle from "./components/blogs/BlogArticle";
-import CourseOne from "./components/course/CourseOne";
+import ProductDesign from "./components/course/ProductDesign";
 import { ReturnsPolicy, PrivacyPolicy, TermsAndConditions } from './pages/PolicyPages';
+import ThreeDPrinting from "./components/course/ThreeDPrinting";
 
 function AppContent() {
   const location = useLocation();
@@ -32,7 +33,8 @@ function AppContent() {
           <Route path="/explore" element={<Explore />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route path="/course" element={<CourseOne />} />
+          <Route path="/productdesign" element={<ProductDesign/>} />
+             <Route path="/threedprinting" element={<ThreeDPrinting/>} />
           <Route path="/blog/:slug" element={<BlogArticle />} />
           <Route path="/refund" element={<ReturnsPolicy />} />
 <Route path="/privacy" element={<PrivacyPolicy />} />
@@ -40,7 +42,7 @@ function AppContent() {
         </Routes>
       </main>
 
-      {/* ✅ Render BlogFooter for both /blogs and /blog/:slug */}
+  
       {isBlogSection ? <BlogFooter /> : <Footer />}
     </div>
   );

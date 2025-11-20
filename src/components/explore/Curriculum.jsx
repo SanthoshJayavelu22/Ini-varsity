@@ -144,7 +144,7 @@ const Curriculum = () => {
 <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
 
   {index === 0 ? (
-    <Link to="/course">
+    <Link to="/productdesign">
       <motion.button
         className="border border-gray-300 text-md font-medium px-6 py-4 rounded-full hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2"
         variants={buttonVariants}

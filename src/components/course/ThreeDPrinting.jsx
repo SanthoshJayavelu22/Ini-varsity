@@ -3,76 +3,79 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Download, Clock, Users, Calendar, Star, ChevronRight, PlayCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Mock images - replace with your actual imports
-import courseHero from "../../assets/images/product design.jpg";
-import module1 from "../../assets/images/img-4.jpg";
-import module2 from "../../assets/images/img-16.jpg";
-import module3 from "../../assets/images/child-making-robot 1.png";
-
-const CoursePage = () => {
+const ThreeDPrinting = () => {
   const [activeModule, setActiveModule] = useState(0);
 
+  // Unsplash Images
+  const unsplashImages = {
+    courseHero: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    module1: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    module2: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    module3: "https://images.unsplash.com/photo-1581093458791-8a6a6e7a643d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
+  };
+
   const courseData = {
-    title: "Product Design and Development Program",
-    subtitle: "22-day Virtual Bootcamp",
-    description: "This 22-days virtual bootcamp offers a hands-on journey into product design and development. Participants will learn how to create a product from scratch, using proven design, fab and research methodologies.",
-    duration: "22 days",
+    title: "3D Printing & Additive Manufacturing Masterclass",
+    subtitle: "3-day Virtual Masterclass",
+    description: "This 3-day virtual Masterclass offers a hands-on experience and introduction to additive manufacturing. Participants will explore cutting-edge technologies, design tools, and real-world applications in sectors like aerospace, healthcare, automotive, and fashion.",
+    duration: "3 days",
     schedule: "07 PM Onwards",
     language: "English + Hindi",
-    price: "INR 12,000",
+    price: "INR 3,000",
     slots: "20-30 Max/Batch",
-    mode: "Online (Microsoft Teams)",
+    mode: "Online (Google Meet)",
     status: "Active",
     
     highlights: [
-      "Design and develop a product from concept to prototype",
-      "Apply product development methodologies and design thinking",
-      "Conduct user and market research for innovation",
-      "Professional presentation of product ideas"
+      "Understand core principles and benefits of 3D printing",
+      "Design and print basic 3D models using industry-relevant tools",
+      "Identify how 3D printing is transforming various industries",
+      "Gain insights into sustainable and cost-effective manufacturing",
+      "Apply rapid prototyping methods to accelerate product development"
     ],
 
     modules: [
       {
         id: 1,
-        title: "Design Thinking & Concept Development",
-        objective: "To develop creative and critical thinking skills by understanding user needs, generating innovative product ideas, and transforming them into well-defined concepts.",
-        image: module1,
+        title: "Evolution of 3D Printing",
+        objective: "To understand the fundamentals of additive manufacturing, its history, and the different types of 3D printing technologies available today.",
+        image: unsplashImages.module1,
         highlights: [
-          "Apply Design Thinking for user-centric solutions",
-          "Master Idea Generation techniques",
-          "Learn Drafting & Sketching for visual communication",
-          "CAD Modeling for 3D visualization",
-          "Conceptual Phase navigation"
+          "Introduction to additive manufacturing",
+          "History and development of 3D printing",
+          "Types of 3D printers (FDM, SLA, SLS, etc.)",
+          "Anatomy and components of a 3D printer",
+          "How to choose the right printer based on use-case"
         ],
-        tools: ["Fusion 360", "Sketching Tools", "Design Thinking Frameworks"]
+        tools: ["FDM Printers", "SLA Printers", "SLS Technology"]
       },
       {
         id: 2,
-        title: "Fabrication & Advanced Manufacturing",
-        objective: "To equip learners with hands-on experience in prototyping, understanding traditional and advanced manufacturing processes.",
-        image: module2,
+        title: "Models and Materials",
+        objective: "To learn CAD modeling fundamentals and understand various printable materials and their applications in different industries.",
+        image: unsplashImages.module2,
         highlights: [
-          "Explore Manufacturing Processes",
-          "Advanced Manufacturing Techniques",
-          "3D Printing workflows",
-          "Slicing Software mastery",
-          "Smart manufacturing analysis"
+          "Introduction to CAD modelling",
+          "Hands-on: Designing your first 3D model",
+          "Overview of printable materials (PLA, ABS, PETG, etc.)",
+          "Criteria for selecting materials based on application",
+          "Sustainable material sourcing and resource management"
         ],
-        tools: ["3D Printers", "Cura", "CNC Software", "Prototyping Tools"]
+        tools: ["CAD Software", "PLA Filament", "ABS Material", "PETG"]
       },
       {
         id: 3,
-        title: "Simulation & AI-Assisted Research",
-        objective: "To validate product performance through simulation tools and introduce AI-powered research techniques.",
-        image: module3,
+        title: "Smart Manufacturing",
+        objective: "To master slicing software, troubleshoot common printing issues, and explore industry applications and future trends.",
+        image: unsplashImages.module3,
         highlights: [
-          "Product Simulations (structural, thermal, fluid)",
-          "AI Tools for Research",
-          "Trend analysis and competitor mapping",
-          "Data-backed validation",
-          "Design optimization"
+          "Introduction to slicing software",
+          "Simulating and preparing 3D models for printing",
+          "Troubleshooting common printing issues",
+          "Industry applications and trends in smart manufacturing",
+          "Future of 3D printing and review of global innovators"
         ],
-        tools: ["Ansys", "Fusion 360", "AI Research Tools", "Simulation Software"]
+        tools: ["Slicing Software", "Simulation Tools", "Industry Case Studies"]
       }
     ],
 
@@ -84,8 +87,8 @@ const CoursePage = () => {
       },
       {
         icon: <Users className="w-6 h-6 text-white" />,
-        title: "AI Tools for Research & Development",
-        description: "Master AI-powered tools for enhanced research capabilities"
+        title: "Networking Opportunities",
+        description: "Connect with industry professionals and peers"
       },
       {
         icon: <Download className="w-6 h-6 text-white" />,
@@ -94,8 +97,8 @@ const CoursePage = () => {
       },
       {
         icon: <Calendar className="w-6 h-6 text-white" />,
-        title: "Letter of Recommendation",
-        description: "Eligible students receive recommendation letters"
+        title: "Comprehensive Handbook",
+        description: "Receive detailed course materials and reference guide"
       },
       {
         icon: <Users className="w-6 h-6 text-white" />,
@@ -103,13 +106,13 @@ const CoursePage = () => {
         description: "Get started with our exclusive welcome package"
       },
       {
-        icon: <Users className="w-6 h-6 text-white" />,
-        title: "Network Building",
-        description: "Connect with industry professionals and peers"
+        icon: <Star className="w-6 h-6 text-white" />,
+        title: "Practical Hands-on Experience",
+        description: "Gain real-world 3D printing and design skills"
       }
     ],
 
-    tools: ["Autodesk Fusion 360", "Ultimaker CURA", "AI Research Tools"]
+    tools: ["CAD Modeling Software", "Slicing Software", "3D Printers", "Various Filaments"]
   };
 
   // Animation variants
@@ -142,43 +145,42 @@ const CoursePage = () => {
     setActiveModule(index);
   };
 
-  const nextBatchDate = "2025-11-25T19:00:00";  // <--- CHANGE DATE HERE
+  const nextBatchDate = "2025-12-01T19:00:00";
 
-const useCountdown = (targetDate) => {
-  const countDownDate = new Date(targetDate).getTime();
+  const useCountdown = (targetDate) => {
+    const countDownDate = new Date(targetDate).getTime();
 
-  const [countDown, setCountDown] = React.useState(
-    countDownDate - new Date().getTime()
-  );
+    const [countDown, setCountDown] = React.useState(
+      countDownDate - new Date().getTime()
+    );
 
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCountDown(countDownDate - new Date().getTime());
-    }, 1000);
+    React.useEffect(() => {
+      const interval = setInterval(() => {
+        setCountDown(countDownDate - new Date().getTime());
+      }, 1000);
 
-    return () => clearInterval(interval);
-  }, [countDownDate]);
+      return () => clearInterval(interval);
+    }, [countDownDate]);
 
-  return getReturnValues(countDown);
-};
+    return getReturnValues(countDown);
+  };
 
-const getReturnValues = (countDown) => {
-  if (countDown <= 0) {
-    return ["0", "0", "0", "0"];
-  }
+  const getReturnValues = (countDown) => {
+    if (countDown <= 0) {
+      return ["0", "0", "0", "0"];
+    }
 
-  const days = Math.floor(countDown / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const minutes = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((countDown % (1000 * 60)) / 1000);
+    const days = Math.floor(countDown / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (countDown % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((countDown % (1000 * 60)) / 1000);
 
-  return [days, hours, minutes, seconds];
-};
+    return [days, hours, minutes, seconds];
+  };
 
-const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
-
+  const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
 
   return (
     <div className="min-h-screen bg-white mt-10 md:mt-20">
@@ -193,8 +195,6 @@ const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
           >
             {/* Left Content */}
             <motion.div variants={fadeInUp}>
-            
-              
               <motion.h1 
                 className="text-4xl md:text-6xl font-light leading-tight mb-6"
                 variants={fadeInUp}
@@ -247,7 +247,7 @@ const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                 Watch Preview
+                  Watch Preview
                 </motion.button>
               </motion.div>
             </motion.div>
@@ -258,9 +258,9 @@ const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
               variants={fadeInUp}
             >
               <motion.img
-                src={courseHero}
-                alt="Course Hero"
-                className="w-[350px] md:w-full h-[500px] md:h-[750px]  rounded-3xl shadow-xl"
+                src={unsplashImages.courseHero}
+                alt="3D Printing Masterclass"
+                className="w-[350px] md:w-full h-[500px] md:h-[750px] rounded-3xl shadow-xl object-cover"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               />
@@ -289,35 +289,32 @@ const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
               variants={fadeInUp}
             >
               <span className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">
-                What You'll Achieve
+                Learning Outcomes
               </span>
             </motion.h2>
 
-<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-  {courseData.highlights.map((highlight, index) => (
-    <motion.div
-      key={index}
-      className="p-[2px] rounded-2xl bg-gradient-to-r from-[#8C52FF] to-[#FF5757]"
-      variants={fadeInUp}
-      whileHover={{ y: -5 }}
-    >
-      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-        
-        {/* Number Badge */}
-        <div className="w-12 h-12 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-lg flex items-center justify-center mb-4">
-          <span className="text-white text-xl font-semibold">{index + 1}</span>
-        </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {courseData.highlights.map((highlight, index) => (
+                <motion.div
+                  key={index}
+                  className="p-[2px] rounded-2xl bg-gradient-to-r from-[#8C52FF] to-[#FF5757]"
+                  variants={fadeInUp}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+                    {/* Number Badge */}
+                    <div className="w-12 h-12 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-lg flex items-center justify-center mb-4">
+                      <span className="text-white text-xl font-semibold">{index + 1}</span>
+                    </div>
 
-        {/* Text */}
-        <p className="text-gray-700 leading-relaxed flex-grow">
-          {highlight}
-        </p>
-      </div>
-    </motion.div>
-  ))}
-</div>
-
-
+                    {/* Text */}
+                    <p className="text-gray-700 leading-relaxed flex-grow">
+                      {highlight}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -343,7 +340,7 @@ const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
               className="text-gray-600 text-center mb-12 max-w-2xl mx-auto"
               variants={fadeInUp}
             >
-              Comprehensive modules covering the entire product development lifecycle
+              Comprehensive 3-day program covering additive manufacturing from basics to advanced applications
             </motion.p>
 
             {/* Module Navigation */}
@@ -363,7 +360,7 @@ const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Module {module.id}
+                  Day {module.id}
                 </motion.button>
               ))}
             </motion.div>
@@ -420,7 +417,7 @@ const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.4 }}
                     >
-                      <h4 className="font-semibold text-gray-900 mb-3">Key Highlights:</h4>
+                      <h4 className="font-semibold text-gray-900 mb-3">Session Topics:</h4>
                       <ul className="space-y-2 mb-6">
                         {courseData.modules[activeModule].highlights.map((highlight, idx) => (
                           <li key={idx} className="flex items-start gap-2">
@@ -474,41 +471,36 @@ const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
               </span>
             </motion.h2>
 
-           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-  {courseData.benefits.map((benefit, index) => (
-    
-    <motion.div
-      key={index}
-      className="p-[2px] rounded-2xl bg-gradient-to-r from-[#8C52FF] to-[#FF5757]"
-      variants={fadeInUp}
-      whileHover={{ y: -5, scale: 1.02 }}
-    >
-      <div className="bg-white rounded-2xl p-6 h-full transition-all duration-300 shadow-sm hover:shadow-md">
-        
-        {/* Icon */}
-        <motion.div
-          className="w-12 h-12 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-lg flex items-center justify-center mb-4"
-          whileHover={{ rotate: 5, scale: 1.1 }}
-        >
-          {benefit.icon}
-        </motion.div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {courseData.benefits.map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  className="p-[2px] rounded-2xl bg-gradient-to-r from-[#8C52FF] to-[#FF5757]"
+                  variants={fadeInUp}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                >
+                  <div className="bg-white rounded-2xl p-6 h-full transition-all duration-300 shadow-sm hover:shadow-md">
+                    {/* Icon */}
+                    <motion.div
+                      className="w-12 h-12 bg-gradient-to-r from-[#8C52FF] to-[#FF5757] rounded-lg flex items-center justify-center mb-4"
+                      whileHover={{ rotate: 5, scale: 1.1 }}
+                    >
+                      {benefit.icon}
+                    </motion.div>
 
-        {/* Title */}
-        <h3 className="text-lg font-semibold text-gray-900 mb-2">
-          {benefit.title}
-        </h3>
+                    {/* Title */}
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {benefit.title}
+                    </h3>
 
-        {/* Description */}
-        <p className="text-gray-600 text-sm leading-relaxed">
-          {benefit.description}
-        </p>
-
-      </div>
-    </motion.div>
-
-  ))}
-</div>
-
+                    {/* Description */}
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -529,7 +521,7 @@ const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
                 variants={fadeInUp}
               >
                 <span className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">
-                  Tools You'll Master
+                  Tools You'll Explore
                 </span>
               </motion.h3>
               
@@ -572,69 +564,66 @@ const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
                 variants={fadeInUp}
               >
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  This program is open to anyone who is curious about innovation and product creation. 
-                  Whether you're a school student exploring design, a college student pursuing engineering 
-                  or business, or a professional seeking to upskill in product development, this course 
-                  is designed to meet your learning needs.
+                  This Masterclass is open to all learners from school students (Grade 10 and above) 
+                  to college students, educators, professionals, and hobbyists. No prior experience 
+                  in 3D printing or design is required. Anyone with a curiosity for innovation, 
+                  product development, or manufacturing is welcome to join.
                 </p>
                 <div className="p-4 bg-gradient-to-r from-[#8C52FF]/10 to-[#FF5757]/10 rounded-lg">
                   <p className="text-gray-700 font-semibold">
-                    No prior experience required — just a passion to build and innovate.
+                    No prior experience required — just curiosity and enthusiasm for innovation.
                   </p>
                 </div>
               </motion.div>
 
-           {/* Final CTA */}
-<motion.div className="mt-8 text-center" variants={fadeInUp}>
+              {/* Final CTA */}
+              <motion.div className="mt-8 text-center" variants={fadeInUp}>
+                {/* Countdown Timer Box */}
+                <div className="mb-6 inline-block px-6 py-4 bg-gradient-to-r from-[#8C52FF]/10 to-[#FF5757]/10 rounded-2xl shadow-inner">
+                  <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                    Next Batch Starts On:
+                  </h4>
 
-  {/* Countdown Timer Box */}
-  <div className="mb-6 inline-block px-6 py-4 bg-gradient-to-r from-[#8C52FF]/10 to-[#FF5757]/10 rounded-2xl shadow-inner">
-    <h4 className="text-lg font-semibold text-gray-800 mb-2">
-      Next Batch Starts On:
-    </h4>
+                  <p className="text-[#8C52FF] font-medium mb-3">
+                    {new Date(nextBatchDate).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric"
+                    })}
+                    {" — "}
+                    {new Date(nextBatchDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                  </p>
 
- <p className="text-[#8C52FF] font-medium mb-3">
-  {new Date(nextBatchDate).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric"
-  })}
-  {" — "}
-  {new Date(nextBatchDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-</p>
+                  {/* Live Countdown */}
+                  <div className="flex justify-center gap-4 text-center">
+                    {[
+                      { label: "Days", value: days },
+                      { label: "Hours", value: hours },
+                      { label: "Minutes", value: minutes },
+                      { label: "Seconds", value: seconds },
+                    ].map((item, index) => (
+                      <div key={index} className="w-20">
+                        <p className="text-2xl font-bold bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent">
+                          {item.value}
+                        </p>
+                        <span className="text-gray-600 text-sm">{item.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
+                <motion.button
+                  className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white font-medium px-12 py-4 rounded-full hover:opacity-90 transition text-lg"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Enroll in Masterclass - {courseData.price}
+                </motion.button>
 
-    {/* Live Countdown */}
-    <div className="flex justify-center gap-4 text-center">
-      {[
-        { label: "Days", value: days },
-        { label: "Hours", value: hours },
-        { label: "Minutes", value: minutes },
-        { label: "Seconds", value: seconds },
-      ].map((item, index) => (
-        <div key={index} className="w-20">
-          <p className="text-2xl font-bold bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent">
-            {item.value}
-          </p>
-          <span className="text-gray-600 text-sm">{item.label}</span>
-        </div>
-      ))}
-    </div>
-  </div>
-
-  <motion.button
-    className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white font-medium px-12 py-4 rounded-full hover:opacity-90 transition text-lg"
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-  >
-    Enroll in Program - {courseData.price}
-  </motion.button>
-
-  <p className="text-gray-600 mt-4 text-sm">
-    Limited to {courseData.slots} participants per batch
-  </p>
-</motion.div>
-
+                <p className="text-gray-600 mt-4 text-sm">
+                  Limited to {courseData.slots} participants per batch
+                </p>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -643,4 +632,4 @@ const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
   );
 };
 
-export default CoursePage;
+export default ThreeDPrinting;

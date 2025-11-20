@@ -184,7 +184,7 @@ export default function CertificationSection() {
                   {cert.description}
                 </p>
                 <div className="flex gap-3 md:justify-end flex-wrap">
-                  <Link to="/course">  <motion.button 
+                  <Link to="/threedprinting">  <motion.button 
                     className="bg-[#fff] border border-gray-300 rounded-full px-5 py-2 text-sm font-medium hover:bg-gray-100 transition"
                     variants={buttonVariants}
                     whileHover="hover"
