@@ -2,20 +2,21 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Download, Clock, Users, Calendar, Star, ChevronRight, PlayCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import courseHero from "../../assets/images/3D Printing.jpg";
 
 const ThreeDPrinting = () => {
   const [activeModule, setActiveModule] = useState(0);
 
   // Unsplash Images
   const unsplashImages = {
-    courseHero: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+   
     module1: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
     module2: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    module3: "https://images.unsplash.com/photo-1581093458791-8a6a6e7a643d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
+    module3: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   };
 
   const courseData = {
-    title: "3D Printing & Additive Manufacturing Masterclass",
+    title: "3D Printing & Additive Manufacturing",
     subtitle: "3-day Virtual Masterclass",
     description: "This 3-day virtual Masterclass offers a hands-on experience and introduction to additive manufacturing. Participants will explore cutting-edge technologies, design tools, and real-world applications in sectors like aerospace, healthcare, automotive, and fashion.",
     duration: "3 days",
@@ -145,7 +146,7 @@ const ThreeDPrinting = () => {
     setActiveModule(index);
   };
 
-  const nextBatchDate = "2025-12-01T19:00:00";
+  const nextBatchDate = "2025-12-07T19:00:00";
 
   const useCountdown = (targetDate) => {
     const countDownDate = new Date(targetDate).getTime();
@@ -196,7 +197,7 @@ const ThreeDPrinting = () => {
             {/* Left Content */}
             <motion.div variants={fadeInUp}>
               <motion.h1 
-                className="text-4xl md:text-6xl font-light leading-tight mb-6"
+                className="text-4xl md:text-5xl font-light leading-tight mb-6"
                 variants={fadeInUp}
               >
                 <span className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">
@@ -258,9 +259,9 @@ const ThreeDPrinting = () => {
               variants={fadeInUp}
             >
               <motion.img
-                src={unsplashImages.courseHero}
+                src={courseHero}
                 alt="3D Printing Masterclass"
-                className="w-[350px] md:w-full h-[500px] md:h-[750px] rounded-3xl shadow-xl object-cover"
+                className="w-[350px] md:w-full h-[300px] md:h-[450px] rounded-3xl shadow-xl object-cover"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               />
@@ -360,7 +361,7 @@ const ThreeDPrinting = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Day {module.id}
+                  Module {module.id}
                 </motion.button>
               ))}
             </motion.div>
@@ -544,87 +545,93 @@ const ThreeDPrinting = () => {
             </motion.div>
 
             {/* Eligibility Section */}
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              <motion.h3 
-                className="text-2xl md:text-3xl font-light mb-6"
-                variants={fadeInUp}
-              >
-                <span className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">
-                  Who Should Enroll?
-                </span>
-              </motion.h3>
-              
-              <motion.div 
-                className="bg-white rounded-2xl p-6 shadow-sm"
-                variants={fadeInUp}
-              >
-                <p className="text-gray-700 mb-4 leading-relaxed">
-                  This Masterclass is open to all learners from school students (Grade 10 and above) 
-                  to college students, educators, professionals, and hobbyists. No prior experience 
-                  in 3D printing or design is required. Anyone with a curiosity for innovation, 
-                  product development, or manufacturing is welcome to join.
-                </p>
-                <div className="p-4 bg-gradient-to-r from-[#8C52FF]/10 to-[#FF5757]/10 rounded-lg">
-                  <p className="text-gray-700 font-semibold">
-                    No prior experience required — just curiosity and enthusiasm for innovation.
-                  </p>
-                </div>
-              </motion.div>
+       <motion.div
+  initial="initial"
+  whileInView="animate"
+  viewport={{ once: true }}
+  variants={staggerContainer}
+>
+  <motion.h3 
+    className="text-2xl md:text-3xl font-light mb-4 md:mb-6 text-center md:text-left"
+    variants={fadeInUp}
+  >
+    <span className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">
+      Who Should Enroll?
+    </span>
+  </motion.h3>
+  
+  <motion.div 
+    className="bg-white rounded-2xl p-4 md:p-6 shadow-sm"
+    variants={fadeInUp}
+  >
+    <p className="text-gray-700 mb-4 leading-relaxed text-sm md:text-base">
+      This Masterclass is open to all learners from school students (Grade 10 and above) 
+      to college students, educators, professionals, and hobbyists. No prior experience 
+      in 3D printing or design is required. Anyone with a curiosity for innovation, 
+      product development, or manufacturing is welcome to join.
+    </p>
+    <div className="p-3 md:p-4 bg-gradient-to-r from-[#8C52FF]/10 to-[#FF5757]/10 rounded-lg">
+      <p className="text-gray-700 font-semibold text-sm md:text-base">
+        No prior experience required — just curiosity and enthusiasm for innovation.
+      </p>
+    </div>
+  </motion.div>
 
-              {/* Final CTA */}
-              <motion.div className="mt-8 text-center" variants={fadeInUp}>
-                {/* Countdown Timer Box */}
-                <div className="mb-6 inline-block px-6 py-4 bg-gradient-to-r from-[#8C52FF]/10 to-[#FF5757]/10 rounded-2xl shadow-inner">
-                  <h4 className="text-lg font-semibold text-gray-800 mb-2">
-                    Next Batch Starts On:
-                  </h4>
+  {/* Final CTA */}
+  <motion.div className="mt-6 md:mt-8 text-center" variants={fadeInUp}>
+    {/* Countdown Timer Box */}
+    <div className="mb-4 md:mb-6 w-full max-w-xs md:max-w-none md:inline-block px-4 md:px-6 py-3 md:py-4 bg-gradient-to-r from-[#8C52FF]/10 to-[#FF5757]/10 rounded-2xl shadow-inner mx-auto">
+      <h4 className="text-base md:text-lg font-semibold text-gray-800 mb-2">
+        Next Batch Starts On:
+      </h4>
 
-                  <p className="text-[#8C52FF] font-medium mb-3">
-                    {new Date(nextBatchDate).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric"
-                    })}
-                    {" — "}
-                    {new Date(nextBatchDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                  </p>
+      <p className="text-[#8C52FF] font-medium mb-3 text-sm md:text-base">
+        {new Date(nextBatchDate).toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric"
+        })}
+        {" — "}
+        {new Date(nextBatchDate).toLocaleTimeString([], { 
+          hour: '2-digit', 
+          minute: '2-digit',
+          hour12: true 
+        })}
+      </p>
 
-                  {/* Live Countdown */}
-                  <div className="flex justify-center gap-4 text-center">
-                    {[
-                      { label: "Days", value: days },
-                      { label: "Hours", value: hours },
-                      { label: "Minutes", value: minutes },
-                      { label: "Seconds", value: seconds },
-                    ].map((item, index) => (
-                      <div key={index} className="w-20">
-                        <p className="text-2xl font-bold bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent">
-                          {item.value}
-                        </p>
-                        <span className="text-gray-600 text-sm">{item.label}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+      {/* Live Countdown */}
+      <div className="flex justify-center gap-2 md:gap-4 text-center">
+        {[
+          { label: "Days", value: days },
+          { label: "Hours", value: hours },
+          { label: "Minutes", value: minutes },
+          { label: "Seconds", value: seconds },
+        ].map((item, index) => (
+          <div key={index} className="w-12 md:w-16 lg:w-20">
+            <p className="text-lg md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent">
+              {item.value}
+            </p>
+            <span className="text-gray-600 text-xs md:text-sm">{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
 
-                <motion.button
-                  className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white font-medium px-12 py-4 rounded-full hover:opacity-90 transition text-lg"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Enroll in Masterclass - {courseData.price}
-                </motion.button>
+    <div className="flex flex-col items-center gap-3 mt-4">
+      <motion.button
+        className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white font-medium px-6 md:px-12 py-3 md:py-4 rounded-full hover:opacity-90 transition text-base md:text-lg w-full max-w-xs md:w-auto"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Enroll in Masterclass - {courseData.price}
+      </motion.button>
 
-                <p className="text-gray-600 mt-4 text-sm">
-                  Limited to {courseData.slots} participants per batch
-                </p>
-              </motion.div>
-            </motion.div>
+      <p className="text-gray-600 text-xs md:text-sm">
+        Limited to {courseData.slots} participants per batch
+      </p>
+    </div>
+  </motion.div>
+</motion.div>
           </div>
         </div>
       </section>

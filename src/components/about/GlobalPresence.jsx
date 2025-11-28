@@ -36,7 +36,7 @@ const CountUp = ({ target, duration = 1500 }) => {
 const GlobalPresence = () => {
   const stats = [
     {
-      number: "1500+",
+      number: "500+",
       title: "Students Trained",
     },
     {

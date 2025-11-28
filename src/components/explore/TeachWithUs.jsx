@@ -24,7 +24,7 @@ const TeachWithUs = () => {
     {
       title: "Advanced Program",
       content:
-        "dvance your career with confidence — gain hands-on experience, master emerging technologies, and earn credentials that showcase your readiness for the global workforce.",
+        "Advance your career with confidence — gain hands-on experience, master emerging technologies, and earn credentials that showcase your readiness for the global workforce.",
     },
   ];
 

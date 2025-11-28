@@ -4,7 +4,7 @@ import { Download, Clock, Users, Calendar, Star, ChevronRight, PlayCircle } from
 import { Link } from "react-router-dom";
 
 // Mock images - replace with your actual imports
-import courseHero from "../../assets/images/product design.jpg";
+import courseHero from "../../assets/images/product.jpg";
 import module1 from "../../assets/images/img-4.jpg";
 import module2 from "../../assets/images/img-16.jpg";
 import module3 from "../../assets/images/child-making-robot 1.png";
@@ -142,7 +142,7 @@ const ProductDesign = () => {
     setActiveModule(index);
   };
 
-  const nextBatchDate = "2025-11-25T19:00:00";  // <--- CHANGE DATE HERE
+  const nextBatchDate = "2025-12-01T19:00:00";  // <--- CHANGE DATE HERE
 
 const useCountdown = (targetDate) => {
   const countDownDate = new Date(targetDate).getTime();
@@ -181,7 +181,7 @@ const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
 
 
   return (
-    <div className="min-h-screen bg-white mt-10 md:mt-20">
+    <div className="min-h-screen bg-white mt-10">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#8C52FF]/10 via-white to-[#FF5757]/10 pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -196,7 +196,7 @@ const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
             
               
               <motion.h1 
-                className="text-4xl md:text-6xl font-light leading-tight mb-6"
+                className="text-4xl md:text-5xl font-light leading-tight mb-6"
                 variants={fadeInUp}
               >
                 <span className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">
@@ -260,7 +260,7 @@ const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
               <motion.img
                 src={courseHero}
                 alt="Course Hero"
-                className="w-[350px] md:w-full h-[500px] md:h-[750px]  rounded-3xl shadow-xl"
+                className="w-[350px] md:w-full h-[300px] md:h-[450px]  rounded-3xl shadow-xl"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               />
@@ -552,90 +552,93 @@ const [days, hours, minutes, seconds] = useCountdown(nextBatchDate);
             </motion.div>
 
             {/* Eligibility Section */}
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              <motion.h3 
-                className="text-2xl md:text-3xl font-light mb-6"
-                variants={fadeInUp}
-              >
-                <span className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">
-                  Who Should Enroll?
-                </span>
-              </motion.h3>
-              
-              <motion.div 
-                className="bg-white rounded-2xl p-6 shadow-sm"
-                variants={fadeInUp}
-              >
-                <p className="text-gray-700 mb-4 leading-relaxed">
-                  This program is open to anyone who is curious about innovation and product creation. 
-                  Whether you're a school student exploring design, a college student pursuing engineering 
-                  or business, or a professional seeking to upskill in product development, this course 
-                  is designed to meet your learning needs.
-                </p>
-                <div className="p-4 bg-gradient-to-r from-[#8C52FF]/10 to-[#FF5757]/10 rounded-lg">
-                  <p className="text-gray-700 font-semibold">
-                    No prior experience required — just a passion to build and innovate.
-                  </p>
-                </div>
-              </motion.div>
-
-           {/* Final CTA */}
-<motion.div className="mt-8 text-center" variants={fadeInUp}>
-
-  {/* Countdown Timer Box */}
-  <div className="mb-6 inline-block px-6 py-4 bg-gradient-to-r from-[#8C52FF]/10 to-[#FF5757]/10 rounded-2xl shadow-inner">
-    <h4 className="text-lg font-semibold text-gray-800 mb-2">
-      Next Batch Starts On:
-    </h4>
-
- <p className="text-[#8C52FF] font-medium mb-3">
-  {new Date(nextBatchDate).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric"
-  })}
-  {" — "}
-  {new Date(nextBatchDate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-</p>
-
-
-    {/* Live Countdown */}
-    <div className="flex justify-center gap-4 text-center">
-      {[
-        { label: "Days", value: days },
-        { label: "Hours", value: hours },
-        { label: "Minutes", value: minutes },
-        { label: "Seconds", value: seconds },
-      ].map((item, index) => (
-        <div key={index} className="w-20">
-          <p className="text-2xl font-bold bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent">
-            {item.value}
-          </p>
-          <span className="text-gray-600 text-sm">{item.label}</span>
-        </div>
-      ))}
-    </div>
-  </div>
-
-  <motion.button
-    className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white font-medium px-12 py-4 rounded-full hover:opacity-90 transition text-lg"
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
+         <motion.div
+  initial="initial"
+  whileInView="animate"
+  viewport={{ once: true }}
+  variants={staggerContainer}
+>
+  <motion.h3 
+    className="text-2xl md:text-3xl font-light mb-6 text-center md:text-left"
+    variants={fadeInUp}
   >
-    Enroll in Program - {courseData.price}
-  </motion.button>
+    <span className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-transparent bg-clip-text">
+      Who Should Enroll?
+    </span>
+  </motion.h3>
+  
+  <motion.div 
+    className="bg-white rounded-2xl p-4 md:p-6 shadow-sm"
+    variants={fadeInUp}
+  >
+    <p className="text-gray-700 mb-4 leading-relaxed text-sm md:text-base">
+      This program is open to anyone who is curious about innovation and product creation. 
+      Whether you're a school student exploring design, a college student pursuing engineering 
+      or business, or a professional seeking to upskill in product development, this course 
+      is designed to meet your learning needs.
+    </p>
+    <div className="p-3 md:p-4 bg-gradient-to-r from-[#8C52FF]/10 to-[#FF5757]/10 rounded-lg">
+      <p className="text-gray-700 font-semibold text-sm md:text-base">
+        No prior experience required — just a passion to build and innovate.
+      </p>
+    </div>
+  </motion.div>
 
-  <p className="text-gray-600 mt-4 text-sm">
-    Limited to {courseData.slots} participants per batch
-  </p>
+  {/* Final CTA */}
+  <motion.div className="mt-6 md:mt-8 text-center" variants={fadeInUp}>
+    {/* Countdown Timer Box */}
+    <div className="mb-4 md:mb-6 inline-block px-4 md:px-6 py-3 md:py-4 bg-gradient-to-r from-[#8C52FF]/10 to-[#FF5757]/10 rounded-2xl shadow-inner w-full max-w-md">
+      <h4 className="text-base md:text-lg font-semibold text-gray-800 mb-2">
+        Next Batch Starts On:
+      </h4>
+
+      <p className="text-[#8C52FF] font-medium mb-3 text-sm md:text-base">
+        {new Date(nextBatchDate).toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric"
+        })}
+        {" — "}
+        {new Date(nextBatchDate).toLocaleTimeString([], { 
+          hour: '2-digit', 
+          minute: '2-digit',
+          hour12: true 
+        })}
+      </p>
+
+      {/* Live Countdown */}
+      <div className="flex justify-center gap-2 md:gap-4 text-center">
+        {[
+          { label: "Days", value: days },
+          { label: "Hours", value: hours },
+          { label: "Minutes", value: minutes },
+          { label: "Seconds", value: seconds },
+        ].map((item, index) => (
+          <div key={index} className="w-12 md:w-16 lg:w-20">
+            <p className="text-lg md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-[#8C52FF] to-[#FF5757] bg-clip-text text-transparent">
+              {item.value}
+            </p>
+            <span className="text-gray-600 text-xs md:text-sm">{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div className="flex flex-col items-center gap-3">
+      <motion.button
+        className="bg-gradient-to-r from-[#8C52FF] to-[#FF5757] text-white font-medium px-6 md:px-12 py-3 md:py-4 rounded-full hover:opacity-90 transition text-base md:text-lg w-full max-w-sm"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        Enroll in Program - {courseData.price}
+      </motion.button>
+
+      <p className="text-gray-600 text-xs md:text-sm">
+        Limited to {courseData.slots} participants per batch
+      </p>
+    </div>
+  </motion.div>
 </motion.div>
-
-            </motion.div>
           </div>
         </div>
       </section>

@@ -106,9 +106,9 @@ const Curriculum = () => {
 
             </p>
             <p className="mt-3">
-             Didn’t find the topic you’re looking for?{" "}
+             Didn’t find the topic you’re looking for?  </p>  <p>{" "}
               <motion.a
-                href="#"
+                href="/contact"
                 className="underline text-gray-900 hover:text-gray-700 font-medium"
                 whileHover={{ x: 2 }}
                 transition={{ duration: 0.2 }}

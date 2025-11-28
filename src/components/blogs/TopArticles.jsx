@@ -23,7 +23,7 @@ export default function TopArticles() {
       category: "Website Essentials",
       title: "What is a domain name and why it matters",
       image:
-        "https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80",
       slug: "domain-name-essentials",
       readTime: "5 min read",
       excerpt: "Understanding the importance of domain names in building your online presence."
@@ -33,7 +33,7 @@ export default function TopArticles() {
       category: "Blog Like a Pro",
       title: "How to start a blog in 10 steps: a beginner's guide",
       image:
-        "https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
       slug: "start-blog-beginners-guide",
       readTime: "8 min read",
       excerpt: "Complete step-by-step guide to launching your first successful blog."
@@ -43,7 +43,7 @@ export default function TopArticles() {
       category: "Website Design",
       title: "15 creative website design ideas that inspire",
       image:
-        "https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80",
       slug: "creative-website-design-ideas",
       readTime: "6 min read",
       excerpt: "Innovative design concepts to make your website stand out from the crowd."
@@ -53,7 +53,7 @@ export default function TopArticles() {
       category: "Marketing Insights",
       title: "How to create a landing page in 13 easy steps",
       image:
-        "https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80",
       slug: "landing-page-creation-guide",
       readTime: "7 min read",
       excerpt: "Build high-converting landing pages that drive results and grow your business."
@@ -63,7 +63,7 @@ export default function TopArticles() {
       category: "AI Knowledge Hub",
       title: "How to create and design a website with AI in 2025",
       image:
-        "https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
       slug: "ai-website-design-2025",
       readTime: "10 min read",
       excerpt: "Leverage artificial intelligence to build stunning websites faster than ever."
@@ -73,7 +73,7 @@ export default function TopArticles() {
       category: "Business Strategies",
       title: "Build your online business from scratch",
       image:
-        "https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
       slug: "online-business-from-scratch",
       readTime: "12 min read",
       excerpt: "Comprehensive guide to launching and scaling your digital business venture."
@@ -83,7 +83,7 @@ export default function TopArticles() {
       category: "E-commerce Tips",
       title: "Top 10 tools to grow your online store",
       image:
-        "https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80",
       slug: "ecommerce-growth-tools",
       readTime: "9 min read",
       excerpt: "Essential tools and platforms to boost your e-commerce store performance."
@@ -93,11 +93,51 @@ export default function TopArticles() {
       category: "Design Focus",
       title: "How minimalism can boost your brand identity",
       image:
-        "https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&w=800&q=80",
       slug: "minimalism-brand-identity",
       readTime: "5 min read",
       excerpt: "Discover how minimalist design principles can strengthen your brand presence."
     },
+    {
+      id: 9,
+      category: "Development",
+      title: "Modern web development trends in 2025",
+      image:
+        "https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&w=800&q=80",
+      slug: "web-development-trends-2025",
+      readTime: "11 min read",
+      excerpt: "Stay ahead with the latest technologies and frameworks shaping web development."
+    },
+    {
+      id: 10,
+      category: "SEO Strategies",
+      title: "Mastering SEO for better search rankings",
+      image:
+        "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=800&q=80",
+      slug: "seo-strategies-guide",
+      readTime: "14 min read",
+      excerpt: "Advanced techniques to improve your website's visibility and organic traffic."
+    },
+    {
+      id: 11,
+      category: "Social Media",
+      title: "Social media marketing for business growth",
+      image:
+        "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80",
+      slug: "social-media-marketing-growth",
+      readTime: "8 min read",
+      excerpt: "Effective strategies to leverage social platforms for business expansion."
+    },
+    {
+      id: 12,
+      category: "Content Creation",
+      title: "Creating engaging content that converts",
+      image:
+        "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=800&q=80",
+      slug: "engaging-content-creation",
+      readTime: "6 min read",
+      excerpt: "Learn to craft compelling content that drives engagement and conversions."
+    }
   ];
 
   // Animation variants
@@ -238,8 +278,8 @@ export default function TopArticles() {
       </motion.div>
 
       {/* Gradient Fade on Sides */}
-      <div className="absolute top-0 left-0 w-20 h-full  pointer-events-none"></div>
-      <div className="absolute top-0 right-0 w-20 h-full pointer-events-none"></div>
+      <div className="absolute top-0 left-0 w-20 h-full   pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-20 h-full  pointer-events-none"></div>
     </section>
   );
 }
